@@ -1,1 +1,46 @@
-<p>login works!</p>
+<form action="">
+    <fieldset>
+        <label for="">Email: </label><input type="email"><br>
+        <label for="">Mot de Passe: </label><input type="password"><br>
+        <button type="button">Se connecter</button>
+    </fieldset>
+</form>
+
+
+<!-- <div class="container mt-5" style="max-width: 400px;">
+  <h2 class="text-center mb-4">Connexion Administrateur</h2>
+
+  <form (ngSubmit)="onLogin()" #loginForm="ngForm">
+    <div class="form-group mb-3">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        class="form-control"
+        [(ngModel)]="email"
+        name="email"
+        required
+      />
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="password">Mot de passe</label>
+      <input
+        type="password"
+        id="password"
+        class="form-control"
+        [(ngModel)]="password"
+        name="password"
+        required
+      />
+    </div>
+
+    <button class="btn btn-dark w-100" [disabled]="!loginForm.form.valid">
+      Se connecter
+    </button>
+
+    <div *ngIf="errorMessage" class="alert alert-danger mt-3 text-center">
+      {{ errorMessage }}
+    </div>
+  </form>
+</div> -->
