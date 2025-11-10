@@ -1,3 +1,32 @@
 import { Routes } from '@angular/router';
+import { List } from './pages/front/list/list';
+import { Detail } from './pages/front/detail/detail';
+import { About } from './pages/front/about/about';
+import { Login } from './pages/admin/login/login';
+import { Dashboard } from './pages/admin/dashboard/dashboard';
+import { Add } from './pages/admin/add/add';
+import { Edit } from './pages/admin/edit/edit';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+    //front office routes
+    { path: '', redirectTo: 'front/list', pathMatch: 'full' },
+    { path: 'front/list', component: List },
+    { path: 'front/detail/:id', component: Detail },
+    { path: 'front/about', component: About },
+    //admin routes
+    {
+        path: 'admin',
+        children: [
+            { path: 'login', component: Login },
+            {
+                path: 'dashboard', component: Dashboard,
+                children: [
+                    { path: 'add', component: Add },
+                    { path: 'edit/:id', component: Edit },
+                ]
+            },
+        ]
+    },
+    //error
+    { path: '**', redirectTo: 'front/list' }
+];

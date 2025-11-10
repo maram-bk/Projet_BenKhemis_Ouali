@@ -1,0 +1,272 @@
+[
+  {
+    "id": "site-eljeme",
+    "nom": "Amphithéâtre d'El Jem",
+    "localisation": "El Jem",
+    "gouvernorat": "Mahdia",
+    "photo": "/images/el jem.jpg",
+    "prixEntree": 10,
+    "horaires": "08h00 - 18h00",
+    "descriptionCourte": "L’un des plus grands amphithéâtres romains au monde, symbole de la grandeur antique en Tunisie.",
+    "descriptionDetaillee": [
+      {
+        "nom": "Amphithéâtre d'El Jem",
+        "photo": "/images/el jem.jpg",
+        "dateDecouverte": "1900-01-01",
+        "possedeMusee": true,
+        "periodeHistorique": "Époque romaine (IIIe siècle)"
+      }
+    ],
+    "comments": [
+      {
+        "nom": "Ahmed Ben Ali",
+        "message": "Magnifique site, très bien conservé et impressionnant à visiter.",
+        "note": 5,
+        "date": "2025-08-12"
+      },
+      {
+        "nom": "Leila Trabelsi",
+        "message": "Superbe monument, mais il faisait très chaud en été, pensez à venir tôt !",
+        "note": 4,
+        "date": "2025-06-22"
+      }
+    ]
+  },
+  {
+    "id": "site-dougga",
+    "nom": "Dougga (Thugga)",
+    "localisation": "Dougga",
+    "gouvernorat": "Béja",
+    "photo": "/images/dougga.jpg",
+    "prixEntree": 12,
+    "horaires": "08h00 - 17h30",
+    "descriptionCourte": "Ancienne cité romaine classée au patrimoine mondial, connue pour son théâtre et ses temples remarquablement préservés.",
+    "descriptionDetaillee": [
+      {
+        "nom": "Dougga (Thugga)",
+        "photo": "/images/dougga.jpg",
+        "dateDecouverte": "1880-01-01",
+        "possedeMusee": false,
+        "periodeHistorique": "Punique / Romain"
+      }
+    ],
+    "comments": [
+      {
+        "nom": "Noura Ben Miled",
+        "message": "Dougga est un bijou ! Le théâtre est magnifique et la vue sur la vallée est superbe.",
+        "note": 5,
+        "date": "2025-05-01"
+      },
+      {
+        "nom": "Sami Gharbi",
+        "message": "Site impressionnant, mais un peu difficile d’accès sans voiture.",
+        "note": 4,
+        "date": "2025-03-15"
+      }
+    ]
+  },
+  {
+    "id": "site-carthage",
+    "nom": "Carthage",
+    "localisation": "Carthage, Tunis",
+    "gouvernorat": "Tunis",
+    "photo": "/images/carthage.jpg",
+    "prixEntree": 15,
+    "horaires": "09h00 - 17h00",
+    "descriptionCourte": "Ancienne capitale punique et romaine, Carthage mêle vestiges grandioses et vues imprenables sur la mer Méditerranée.",
+    "descriptionDetaillee": [
+      {
+        "nom": "Carthage",
+        "photo": "/images/carthage.jpg",
+        "dateDecouverte": "1830-01-01",
+        "possedeMusee": true,
+        "periodeHistorique": "Phénicien / Punique / Romain"
+      }
+    ],
+    "comments": [
+      {
+        "nom": "Amira Haddad",
+        "message": "Superbe mélange entre histoire punique et romaine. Le musée est très bien fait.",
+        "note": 5,
+        "date": "2025-02-21"
+      },
+      {
+        "nom": "Youssef Marzouki",
+        "message": "Les thermes d’Antonin sont impressionnants, mais la signalisation pourrait être améliorée.",
+        "note": 4,
+        "date": "2025-07-10"
+      },
+      {
+        "nom": "Faten Saidi",
+        "message": "Un site incontournable si vous êtes à Tunis. Vue magnifique sur la mer.",
+        "note": 5,
+        "date": "2025-08-03"
+      }
+    ]
+  },
+  {
+    "id": "site-bullaregia",
+    "nom": "Bulla Regia",
+    "localisation": "Jendouba",
+    "gouvernorat": "Jendouba",
+    "photo": "/images/bulla-regia.jpg",
+    "prixEntree": 8,
+    "horaires": "08h30 - 16h30",
+    "descriptionCourte": "Célèbre pour ses maisons souterraines uniques, Bulla Regia témoigne du génie architectural romain.",
+    "descriptionDetaillee": [
+      {
+        "nom": "Bulla Regia",
+        "photo": "/images/bulla-regia.jpg",
+        "dateDecouverte": "1904-01-01",
+        "possedeMusee": false,
+        "periodeHistorique": "Époque romaine"
+      }
+    ],
+    "comments": [
+      {
+        "nom": "Riadh Kefi",
+        "message": "Les maisons souterraines sont impressionnantes. Une visite fascinante !",
+        "note": 5,
+        "date": "2025-03-28"
+      },
+      {
+        "nom": "Henda Lassoued",
+        "message": "Très beau site, calme et bien conservé. Dommage qu’il n’y ait pas de musée sur place.",
+        "note": 4,
+        "date": "2025-06-09"
+      }
+    ]
+  },
+  {
+    "id": "site-sbeitla",
+    "nom": "Sbeitla (Sufetula)",
+    "localisation": "Sbeitla",
+    "gouvernorat": "Kasserine",
+    "photo": "/images/sbeitla.jpg",
+    "prixEntree": 8,
+    "horaires": "08h00 - 18h00",
+    "descriptionCourte": "Ville antique remarquable pour son forum et ses temples dédiés à la triade capitoline.",
+    "descriptionDetaillee": [
+      {
+        "nom": "Sbeitla (Sufetula)",
+        "photo": "/images/sbeitla.jpg",
+        "dateDecouverte": "1906-01-01",
+        "possedeMusee": true,
+        "periodeHistorique": "Romain / Byzantin"
+      }
+    ],
+    "comments": [
+      {
+        "nom": "Meriem Krifa",
+        "message": "Les temples sont magnifiques ! On sent la puissance de l’époque romaine.",
+        "note": 5,
+        "date": "2025-05-19"
+      },
+      {
+        "nom": "Walid Oueslati",
+        "message": "Très beau site, mais manque d’explications sur place.",
+        "note": 4,
+        "date": "2025-07-11"
+      }
+    ]
+  },
+  {
+    "id": "site-oudna",
+    "nom": "Oudna (Uthina)",
+    "localisation": "Oudna",
+    "gouvernorat": "Ben Arous",
+    "photo": "/images/oudna.webp",
+    "prixEntree": 6,
+    "horaires": "08h00 - 17h30",
+    "descriptionCourte": "Ancienne cité romaine réputée pour ses vastes citernes et son impressionnant amphithéâtre.",
+    "descriptionDetaillee": [
+      {
+        "nom": "Oudna (Uthina)",
+        "photo": "/images/oudna.webp",
+        "dateDecouverte": "1890-01-01",
+        "possedeMusee": false,
+        "periodeHistorique": "Époque romaine"
+      }
+    ],
+    "comments": [
+      {
+        "nom": "Slim Dhouib",
+        "message": "Très beau site, peu fréquenté et parfait pour une promenade tranquille.",
+        "note": 5,
+        "date": "2025-02-10"
+      },
+      {
+        "nom": "Hana Jaziri",
+        "message": "J’ai adoré les citernes ! Impressionnantes et bien préservées.",
+        "note": 5,
+        "date": "2025-08-25"
+      }
+    ]
+  },
+  {
+    "id": "site-haidra",
+    "nom": "Haïdra (Ammaedara)",
+    "localisation": "Haïdra",
+    "gouvernorat": "Kasserine",
+    "photo": "/images/haidra.webp",
+    "prixEntree": 5,
+    "horaires": "08h00 - 17h00",
+    "descriptionCourte": "Située dans les montagnes, Haïdra conserve d’imposantes ruines byzantines et romaines, dont un arc de triomphe remarquable.",
+    "descriptionDetaillee": [
+      {
+        "nom": "Haïdra (Ammaedara)",
+        "photo": "/images/haidra.webp",
+        "dateDecouverte": "1898-01-01",
+        "possedeMusee": false,
+        "periodeHistorique": "Romain / Byzantin"
+      }
+    ],
+    "comments": [
+      {
+        "nom": "Lotfi Chatti",
+        "message": "Endroit très intéressant, un peu isolé mais chargé d’histoire.",
+        "note": 4,
+        "date": "2025-04-02"
+      },
+      {
+        "nom": "Ines Friaa",
+        "message": "Les ruines sont magnifiques, surtout l’arc de triomphe.",
+        "note": 5,
+        "date": "2025-09-18"
+      }
+    ]
+  },
+  {
+    "id": "site-maknassy",
+    "nom": "Maknassy (Mactar)",
+    "localisation": "Maktar",
+    "gouvernorat": "Siliana",
+    "photo": "assets/images/maktar/maktar-1.jpg",
+    "prixEntree": 7,
+    "horaires": "08h00 - 17h30",
+    "descriptionCourte": "Ancienne cité numide puis romaine, connue pour ses thermes, son forum et sa basilique chrétienne.",
+    "descriptionDetaillee": [
+      {
+        "nom": "Maknassy (Mactar)",
+        "photo": "assets/images/maktar/maktar-1.jpg",
+        "dateDecouverte": "1885-01-01",
+        "possedeMusee": true,
+        "periodeHistorique": "Numide / Romain"
+      }
+    ],
+    "comments": [
+      {
+        "nom": "Nidhal Rekik",
+        "message": "Superbe site, bien entretenu et avec de belles explications.",
+        "note": 5,
+        "date": "2025-05-07"
+      },
+      {
+        "nom": "Aicha Messaoud",
+        "message": "J’ai adoré les thermes romains, mais le musée était fermé.",
+        "note": 4,
+        "date": "2025-07-30"
+      }
+    ]
+  }
+]
