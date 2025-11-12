@@ -102,7 +102,7 @@ login-admin
 
 dashboard-admin
 
-8.Créer un service Angular 
+8.Créer un service Angular ✅
 
 patrimoine.service.ts
 → contient toutes les fonctions CRUD (Create, Read, Update, Delete)
