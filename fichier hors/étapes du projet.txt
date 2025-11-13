@@ -117,7 +117,7 @@ puis crée db.json et lance :
 npx json-server --watch db.json --port 3000
 
 
-9.Mettre en place l’authentification
+9.Mettre en place l’authentification ✅
 
 Page de login (email / mot de passe)
 
