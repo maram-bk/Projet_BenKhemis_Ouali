@@ -1,0 +1,29 @@
+.heart summary {
+  cursor: pointer;
+  list-style: none; /* enlève la flèche */
+  display: inline-flex;
+  position: relative;
+}
+
+.heart summary::-webkit-details-marker {
+  display: none;
+}
+.heart i {
+  font-size: 2rem;
+  color: red;
+  position: absolute;
+  transition: opacity 0.2s;
+}
+
+/* Par défaut : cœur vide */
+.heart .bi-heart-fill {
+  opacity: 0;
+}
+
+/* Quand <details> est ouvert => cœur plein */
+.heart[open] .bi-heart {
+  opacity: 0;
+}
+.heart[open] .bi-heart-fill {
+  opacity: 1;
+}
