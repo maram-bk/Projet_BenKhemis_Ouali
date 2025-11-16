@@ -18,8 +18,29 @@ export class Detail implements OnInit {
   private readonly siteService: SiteService = inject(SiteService);
   private readonly route: ActivatedRoute = inject(ActivatedRoute);
   private readonly router: Router = inject(Router);
-
   commentForm!: FormGroup;
+  isOpen: boolean = false;
+  openAt: string = '';
+  closeAt: string = '';
+
+  showComment:boolean=false;
+
+
+  checkOpenStatus() {
+    if (!this.site || !this.site.horaires) return;
+    let [openStr, closeStr] = this.site.horaires.split('-').map(s => s.trim());
+    let now = new Date();
+    let today = new Date();
+    let [openHour, openMin] = openStr.replace('h', ':').split(':').map(Number);
+    let [closeHour, closeMin] = closeStr.replace('h', ':').split(':').map(Number);
+    let openTime = new Date(today);
+    openTime.setHours(openHour, openMin, 0, 0);
+    let closeTime = new Date(today);
+    closeTime.setHours(closeHour, closeMin, 0, 0);
+    this.isOpen = now >= openTime && now <= closeTime;
+    this.openAt = openStr;
+    this.closeAt = closeStr;
+  }
   ngOnInit(): void {
     this.commentForm = this.fb.nonNullable.group({
       nom: [''],
@@ -27,10 +48,11 @@ export class Detail implements OnInit {
       note: [0]
     });
     this.route.params.subscribe(params => {
-      const id = params['id']; // get the id from the URL
+      const id = params['id'];
       if (id) {
         this.siteService.getSiteById(id).subscribe(s => {
           this.site = s;
+          this.checkOpenStatus();
         });
       }
     });
@@ -55,32 +77,16 @@ export class Detail implements OnInit {
         note: 5
       })
     })
+    this.showComment=false;
+    
   }
   onBack() {
     this.router.navigate(['/front/list']);
   }
 
-
-//  getStatus(): 'Ouvert' | 'Fermé' {
-//   if (!this.site?.horaires) return 'Fermé';
-
-//   // remove spaces and split by dash
-//   const [start, end] = this.site.horaires.replace(/\s/g,'').split('-'); // ["08h00","18h00"]
-
-//   const now = new Date();
-
-//   // parse hours and minutes from "08h00"
-//   const [startHour, startMin] = start.split('h').map(Number);
-//   const [endHour, endMin] = end.split('h').map(Number);
-
-//   const startTime = new Date();
-//   startTime.setHours(startHour, startMin, 0, 0);
-
-//   const endTime = new Date();
-//   endTime.setHours(endHour, endMin, 0, 0);
-
-//   return now >= startTime && now <= endTime ? 'Ouvert' : 'Fermé';
-// }
+  onShowComments(){
+    this.showComment = !this.showComment;
+  }
 
 
 

@@ -10,29 +10,29 @@ import { RouterLink } from "@angular/router";
   templateUrl: './list.html',
   styleUrl: './list.css',
 })
-export class List implements OnInit{
-sites:SiteArcheologique[]=[];
-filtered:SiteArcheologique[]=[];
-private readonly siteService:SiteService=inject(SiteService);
-searchName="";
-maxPrix:number|null=null;
-ngOnInit(): void {
-  this.siteService.getAllSite().subscribe(
-    data=> {
-      this.sites=data;
-      this.filtered=data;
-  })
-}
-onFilter(){
-  this.filtered=this.sites.filter(site=>{
-    let byName=this.searchName? site.nom.toLowerCase().startsWith(this.searchName.toLowerCase()):true;
-    let byPrix=this.maxPrix !== null && this.maxPrix !== undefined? site.prixEntree <=  this.maxPrix : true;
-    return byName && byPrix;
-  })
-}
-onClearFilter(){
-  this.searchName='';
-  this.maxPrix=null;
-  this.filtered=[...this.sites];
-}
+export class List implements OnInit {
+  sites: SiteArcheologique[] = [];
+  filtered: SiteArcheologique[] = [];
+  private readonly siteService: SiteService = inject(SiteService);
+  searchName = "";
+  maxPrix: number | null = null;
+  ngOnInit(): void {
+    this.siteService.getAllSite().subscribe(
+      data => {
+        this.sites = data;
+        this.filtered = data;
+      })
+  }
+  onFilter() {
+    this.filtered = this.sites.filter(site => {
+      let byName = this.searchName ? site.nom.toLowerCase().startsWith(this.searchName.toLowerCase()) : true;
+      let byPrix = this.maxPrix !== null && this.maxPrix !== undefined ? site.prixEntree <= this.maxPrix : true;
+      return byName && byPrix;
+    })
+  }
+  onClearFilter() {
+    this.searchName = '';
+    this.maxPrix = null;
+    this.filtered = [...this.sites];
+  }
 }
