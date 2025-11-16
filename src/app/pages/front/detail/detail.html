@@ -1,1 +1,74 @@
-<p>detail works!</p>
+@if (site) {
+<div class="row">
+    <div class="col-md-6">
+        <img [src]="site.photo" alt="" class="img-fluid" style="max-height:4400px;object-fit: cover;">
+    </div>
+    <div class="col-md-6">
+        <h2>{{site.nom}}</h2>
+        <p><strong>Localisation: </strong>{{site.localisation}} ({{site.gouvernorat}})</p>
+        <p><strong>Horaires: </strong>{{site.horaires}}</p>
+        <!-- <div class="status-box" [class]="{'open': getStatus() === 'Ouvert', 'closed': getStatus() === 'Fermé'}">
+            {{ getStatus() }}
+        </div> -->
+        <p><strong>Prix d'entrée: </strong>{{site.prixEntree}} DT</p>
+        <p>{{site.descriptionCourte}}</p>
+        @if (site.descriptionDetaillee?.length) {
+        <h5>Détails Historiques</h5>
+        @for (d of site.descriptionDetaillee; track $index) {
+        <p>
+            <strong>{{d.nom}}</strong>
+            - {{d.periodeHistorique}}
+            - découvert le {{d.dateDecouverte}}
+        </p>
+        <p [class]="{
+                    'text-success' : d.possedeMusee,
+                    'text-danger' : !d.possedeMusee
+                }">Musée sur place : {{d.possedeMusee ? 'Oui' : 'Non'}}</p>
+        }
+        }
+    </div>
+</div>
+<hr>
+<h4>Commentaires</h4>
+@if (site.comments?.length) {
+@for (c of site.comments; track $index) {
+<div class="mb-3">
+    <strong>{{c.nom}}</strong> - <small>{{c.date | date : 'dd-MM-yyyy'}}</small>
+    <div>Note: {{c.note | starcomment}}</div>
+    <p>{{c.message}}</p>
+</div>
+}
+}
+@else {
+<p>Aucun commentaires pour le moment.</p>
+}
+<div class="card p-3 mt-3">
+    <h5>Laisser un commentaire</h5>
+    <form [formGroup]="commentForm">
+        <div class="mb-2">
+            <input class="form-control" formControlName="nom" placeholder="Nom">
+        </div>
+        <div class="mb-2">
+            <textarea class="form-control" formControlName="message" placeholder="Message"></textarea>
+        </div>
+        <div class="mb-2">
+            <label>Note</label>
+            <!-- <select class="form-select" [(ngModel)]="newComment.note">
+                @for (n of [5,4,3,2,1]; track n) {
+                <option [value]="n">{{n}}</option>
+                }
+            </select> -->
+            <div class="star-rating">
+                @for (n of [1,2,3,4,5]; track n) {
+                <span (click)="commentForm.get('note')?.setValue(n)"
+                    [class.filled]="n <= commentForm.get('note')?.value" class="star">&#9733;</span>
+                }
+            </div>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-success" (click)="onAddComment()">Publier</button>
+            <button class="btn btn-secondary ms-2" (click)="onBack()">Retour</button>
+        </div>
+    </form>
+</div>
+}
