@@ -25,4 +25,7 @@ export class SiteService {
   deleteSiteById(id: string): Observable<void> {
     return this.http.delete<void>(`${API_URL}/${id}`);
   }
+
+
+
 }
