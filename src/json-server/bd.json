@@ -18,20 +18,7 @@
           "periodeHistorique": "Époque romaine (IIIe siècle)"
         }
       ],
-      "comments": [
-        {
-          "nom": "Ahmed Ben Ali",
-          "message": "Magnifique site, très bien conservé et impressionnant à visiter.",
-          "note": 5,
-          "date": "2025-08-12"
-        },
-        {
-          "nom": "Leila Trabelsi",
-          "message": "Superbe monument, mais il faisait très chaud en été, pensez à venir tôt !",
-          "note": 4,
-          "date": "2025-06-22"
-        }
-      ]
+      "comments": []
     },
     {
       "id": "site-dougga",
@@ -180,6 +167,12 @@
           "message": "Très beau site, mais manque d’explications sur place.",
           "note": 4,
           "date": "2025-07-11"
+        },
+        {
+          "nom": "Anonym",
+          "message": "",
+          "note": 0,
+          "date": "2025-11-16"
         }
       ]
     },
