@@ -5,14 +5,14 @@
       "nom": "Amphithéâtre d'El Jem",
       "localisation": "El Jem",
       "gouvernorat": "Mahdia",
-      "photo": "/images/el jem.jpg",
+      "photo": "/images/el-jem.jpg",
       "prixEntree": 10,
       "horaires": "08h00 - 18h00",
       "descriptionCourte": "L’un des plus grands amphithéâtres romains au monde, symbole de la grandeur antique en Tunisie.",
       "descriptionDetaillee": [
         {
           "nom": "Amphithéâtre d'El Jem",
-          "photo": "/images/el jem.jpg",
+          "photo": "/images/el-jem.jpg",
           "dateDecouverte": "1900-01-01",
           "possedeMusee": true,
           "periodeHistorique": "Époque romaine (IIIe siècle)"
@@ -135,6 +135,18 @@
           "message": "Très beau site, calme et bien conservé. Dommage qu’il n’y ait pas de musée sur place.",
           "note": 4,
           "date": "2025-06-09"
+        },
+        {
+          "nom": "maram",
+          "message": "j'aime bien",
+          "note": 4,
+          "date": "Sun Nov 16 2025 17:15:26 GM"
+        },
+        {
+          "nom": "line",
+          "message": "ouiii",
+          "note": 5,
+          "date": "2025-11-16"
         }
       ]
     },
@@ -238,35 +250,35 @@
       ]
     },
     {
-      "id": "site-maknassy",
-      "nom": "Maknassy (Mactar)",
-      "localisation": "Maktar",
-      "gouvernorat": "Siliana",
-      "photo": "assets/images/maktar/maktar-1.jpg",
+      "id": "site-thuburbo",
+      "nom": "Thuburbo Majus",
+      "localisation": "El Fahs",
+      "gouvernorat": "Zaghouan",
+      "photo": "/images/thuburbo-majus.jpg",
       "prixEntree": 7,
       "horaires": "08h00 - 17h30",
-      "descriptionCourte": "Ancienne cité numide puis romaine, connue pour ses thermes, son forum et sa basilique chrétienne.",
+      "descriptionCourte": "Ancienne cité romaine célèbre pour son grand forum, ses thermes et ses temples encore bien conservés.",
       "descriptionDetaillee": [
         {
-          "nom": "Maknassy (Mactar)",
-          "photo": "assets/images/maktar/maktar-1.jpg",
-          "dateDecouverte": "1885-01-01",
-          "possedeMusee": true,
-          "periodeHistorique": "Numide / Romain"
+          "nom": "Thuburbo Majus",
+          "photo": "/images/thuburbo-majus.jpg",
+          "dateDecouverte": "1888-01-01",
+          "possedeMusee": false,
+          "periodeHistorique": "Époque romaine"
         }
       ],
       "comments": [
         {
-          "nom": "Nidhal Rekik",
-          "message": "Superbe site, bien entretenu et avec de belles explications.",
+          "nom": "Mohamed Sallem",
+          "message": "Site impressionnant, très vaste et encore peu fréquenté. Une belle découverte !",
           "note": 5,
-          "date": "2025-05-07"
+          "date": "2025-04-10"
         },
         {
-          "nom": "Aicha Messaoud",
-          "message": "J’ai adoré les thermes romains, mais le musée était fermé.",
+          "nom": "Sarra Jouini",
+          "message": "J’ai beaucoup aimé les thermes et les colonnes du forum. Prévoir de bonnes chaussures !",
           "note": 4,
-          "date": "2025-07-30"
+          "date": "2025-08-18"
         }
       ]
     }
