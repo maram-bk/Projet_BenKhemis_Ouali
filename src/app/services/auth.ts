@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 export class Auth {
   adminEmail = 'ml@gmail.com';
   adminPassword = '1234';
-  constructor (private router : Router){}
+  private readonly router : Router = inject(Router);
   logIn(email:string , password:string){
     if(email===this.adminEmail && password===this.adminPassword){
       localStorage.setItem('isLoggedIn','true');

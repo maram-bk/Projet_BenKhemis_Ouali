@@ -1,0 +1,949 @@
+1) db.json (à la racine du projet ou src/assets/db.json)
+{
+  "sites": [
+    {
+      "id": "site-eljeme",
+      "nom": "Amphithéâtre d'El Jem",
+      "localisation": "El Jem",
+      "gouvernorat": "Mahdia",
+      "photo": "/images/el jem.jpg",
+      "prixEntree": 10,
+      "horaires": "08h00 - 18h00",
+      "descriptionCourte": "L’un des plus grands amphithéâtres romains au monde, symbole de la grandeur antique en Tunisie.",
+      "descriptionDetaillee": [
+        {
+          "nom": "Amphithéâtre d'El Jem",
+          "photo": "/images/el jem.jpg",
+          "dateDecouverte": "1900-01-01",
+          "possedeMusee": true,
+          "periodeHistorique": "Époque romaine (IIIe siècle)"
+        }
+      ],
+      "comments": [
+        {
+          "nom": "Ahmed Ben Ali",
+          "message": "Magnifique site, très bien conservé et impressionnant à visiter.",
+          "note": 5,
+          "date": "2025-08-12"
+        },
+        {
+          "nom": "Leila Trabelsi",
+          "message": "Superbe monument, mais il faisait très chaud en été, pensez à venir tôt !",
+          "note": 4,
+          "date": "2025-06-22"
+        }
+      ]
+    },
+    {
+      "id": "site-dougga",
+      "nom": "Dougga (Thugga)",
+      "localisation": "Dougga",
+      "gouvernorat": "Béja",
+      "photo": "/images/dougga.jpg",
+      "prixEntree": 12,
+      "horaires": "08h00 - 17h30",
+      "descriptionCourte": "Ancienne cité romaine classée au patrimoine mondial, connue pour son théâtre et ses temples remarquablement préservés.",
+      "descriptionDetaillee": [
+        {
+          "nom": "Dougga (Thugga)",
+          "photo": "/images/dougga.jpg",
+          "dateDecouverte": "1880-01-01",
+          "possedeMusee": false,
+          "periodeHistorique": "Punique / Romain"
+        }
+      ],
+      "comments": [
+        {
+          "nom": "Noura Ben Miled",
+          "message": "Dougga est un bijou ! Le théâtre est magnifique et la vue sur la vallée est superbe.",
+          "note": 5,
+          "date": "2025-05-01"
+        },
+        {
+          "nom": "Sami Gharbi",
+          "message": "Site impressionnant, mais un peu difficile d’accès sans voiture.",
+          "note": 4,
+          "date": "2025-03-15"
+        }
+      ]
+    },
+    {
+      "id": "site-carthage",
+      "nom": "Carthage",
+      "localisation": "Carthage, Tunis",
+      "gouvernorat": "Tunis",
+      "photo": "/images/carthage.jpg",
+      "prixEntree": 15,
+      "horaires": "09h00 - 17h00",
+      "descriptionCourte": "Ancienne capitale punique et romaine, Carthage mêle vestiges grandioses et vues imprenables sur la mer Méditerranée.",
+      "descriptionDetaillee": [
+        {
+          "nom": "Carthage",
+          "photo": "/images/carthage.jpg",
+          "dateDecouverte": "1830-01-01",
+          "possedeMusee": true,
+          "periodeHistorique": "Phénicien / Punique / Romain"
+        }
+      ],
+      "comments": [
+        {
+          "nom": "Amira Haddad",
+          "message": "Superbe mélange entre histoire punique et romaine. Le musée est très bien fait.",
+          "note": 5,
+          "date": "2025-02-21"
+        },
+        {
+          "nom": "Youssef Marzouki",
+          "message": "Les thermes d’Antonin sont impressionnants, mais la signalisation pourrait être améliorée.",
+          "note": 4,
+          "date": "2025-07-10"
+        },
+        {
+          "nom": "Faten Saidi",
+          "message": "Un site incontournable si vous êtes à Tunis. Vue magnifique sur la mer.",
+          "note": 5,
+          "date": "2025-08-03"
+        }
+      ]
+    },
+    {
+      "id": "site-bullaregia",
+      "nom": "Bulla Regia",
+      "localisation": "Jendouba",
+      "gouvernorat": "Jendouba",
+      "photo": "/images/bulla-regia.jpg",
+      "prixEntree": 8,
+      "horaires": "08h30 - 16h30",
+      "descriptionCourte": "Célèbre pour ses maisons souterraines uniques, Bulla Regia témoigne du génie architectural romain.",
+      "descriptionDetaillee": [
+        {
+          "nom": "Bulla Regia",
+          "photo": "/images/bulla-regia.jpg",
+          "dateDecouverte": "1904-01-01",
+          "possedeMusee": false,
+          "periodeHistorique": "Époque romaine"
+        }
+      ],
+      "comments": [
+        {
+          "nom": "Riadh Kefi",
+          "message": "Les maisons souterraines sont impressionnantes. Une visite fascinante !",
+          "note": 5,
+          "date": "2025-03-28"
+        },
+        {
+          "nom": "Henda Lassoued",
+          "message": "Très beau site, calme et bien conservé. Dommage qu’il n’y ait pas de musée sur place.",
+          "note": 4,
+          "date": "2025-06-09"
+        }
+      ]
+    },
+    {
+      "id": "site-sbeitla",
+      "nom": "Sbeitla (Sufetula)",
+      "localisation": "Sbeitla",
+      "gouvernorat": "Kasserine",
+      "photo": "/images/sbeitla.jpg",
+      "prixEntree": 8,
+      "horaires": "08h00 - 18h00",
+      "descriptionCourte": "Ville antique remarquable pour son forum et ses temples dédiés à la triade capitoline.",
+      "descriptionDetaillee": [
+        {
+          "nom": "Sbeitla (Sufetula)",
+          "photo": "/images/sbeitla.jpg",
+          "dateDecouverte": "1906-01-01",
+          "possedeMusee": true,
+          "periodeHistorique": "Romain / Byzantin"
+        }
+      ],
+      "comments": [
+        {
+          "nom": "Meriem Krifa",
+          "message": "Les temples sont magnifiques ! On sent la puissance de l’époque romaine.",
+          "note": 5,
+          "date": "2025-05-19"
+        },
+        {
+          "nom": "Walid Oueslati",
+          "message": "Très beau site, mais manque d’explications sur place.",
+          "note": 4,
+          "date": "2025-07-11"
+        }
+      ]
+    },
+    {
+      "id": "site-oudna",
+      "nom": "Oudna (Uthina)",
+      "localisation": "Oudna",
+      "gouvernorat": "Ben Arous",
+      "photo": "/images/oudna.webp",
+      "prixEntree": 6,
+      "horaires": "08h00 - 17h30",
+      "descriptionCourte": "Ancienne cité romaine réputée pour ses vastes citernes et son impressionnant amphithéâtre.",
+      "descriptionDetaillee": [
+        {
+          "nom": "Oudna (Uthina)",
+          "photo": "/images/oudna.webp",
+          "dateDecouverte": "1890-01-01",
+          "possedeMusee": false,
+          "periodeHistorique": "Époque romaine"
+        }
+      ],
+      "comments": [
+        {
+          "nom": "Slim Dhouib",
+          "message": "Très beau site, peu fréquenté et parfait pour une promenade tranquille.",
+          "note": 5,
+          "date": "2025-02-10"
+        },
+        {
+          "nom": "Hana Jaziri",
+          "message": "J’ai adoré les citernes ! Impressionnantes et bien préservées.",
+          "note": 5,
+          "date": "2025-08-25"
+        }
+      ]
+    },
+    {
+      "id": "site-haidra",
+      "nom": "Haïdra (Ammaedara)",
+      "localisation": "Haïdra",
+      "gouvernorat": "Kasserine",
+      "photo": "/images/haidra.webp",
+      "prixEntree": 5,
+      "horaires": "08h00 - 17h00",
+      "descriptionCourte": "Située dans les montagnes, Haïdra conserve d’imposantes ruines byzantines et romaines, dont un arc de triomphe remarquable.",
+      "descriptionDetaillee": [
+        {
+          "nom": "Haïdra (Ammaedara)",
+          "photo": "/images/haidra.webp",
+          "dateDecouverte": "1898-01-01",
+          "possedeMusee": false,
+          "periodeHistorique": "Romain / Byzantin"
+        }
+      ],
+      "comments": [
+        {
+          "nom": "Lotfi Chatti",
+          "message": "Endroit très intéressant, un peu isolé mais chargé d’histoire.",
+          "note": 4,
+          "date": "2025-04-02"
+        },
+        {
+          "nom": "Ines Friaa",
+          "message": "Les ruines sont magnifiques, surtout l’arc de triomphe.",
+          "note": 5,
+          "date": "2025-09-18"
+        }
+      ]
+    },
+    {
+      "id": "site-maknassy",
+      "nom": "Maknassy (Mactar)",
+      "localisation": "Maktar",
+      "gouvernorat": "Siliana",
+      "photo": "assets/images/maktar/maktar-1.jpg",
+      "prixEntree": 7,
+      "horaires": "08h00 - 17h30",
+      "descriptionCourte": "Ancienne cité numide puis romaine, connue pour ses thermes, son forum et sa basilique chrétienne.",
+      "descriptionDetaillee": [
+        {
+          "nom": "Maknassy (Mactar)",
+          "photo": "assets/images/maktar/maktar-1.jpg",
+          "dateDecouverte": "1885-01-01",
+          "possedeMusee": true,
+          "periodeHistorique": "Numide / Romain"
+        }
+      ],
+      "comments": [
+        {
+          "nom": "Nidhal Rekik",
+          "message": "Superbe site, bien entretenu et avec de belles explications.",
+          "note": 5,
+          "date": "2025-05-07"
+        },
+        {
+          "nom": "Aicha Messaoud",
+          "message": "J’ai adoré les thermes romains, mais le musée était fermé.",
+          "note": 4,
+          "date": "2025-07-30"
+        }
+      ]
+    }
+  ]
+}
+
+2) Models (interfaces)
+
+Crée un dossier src/app/models/ et ajoute ces fichiers.
+
+src/app/models/site-archeologique.ts
+import { Commentaire } from './commentaire';
+import { SiteDetail } from './site-detail';
+
+export interface SiteArcheologique {
+  id: string;
+  nom: string;
+  localisation: string;
+  gouvernorat: string;
+  photo: string;
+  prixEntree: number;
+  descriptionCourte: string;
+  descriptionDetaillee?: SiteDetail[];
+  horaires: string;
+  comments?: Commentaire[];
+}
+
+src/app/models/commentaire.ts
+export interface Commentaire {
+  nom: string;
+  message: string;
+  note: number;
+  date: string;
+}
+
+src/app/models/site-detail.ts
+export interface SiteDetail {
+  nom: string;
+  photo: string;
+  dateDecouverte: string;
+  possedeMusee: boolean;
+  periodeHistorique: string;
+}
+
+3) Service CRUD — SiteService
+
+src/app/services/site.service.ts
+
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { SiteArcheologique } from '../models/site-archeologique';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class SiteService {
+  private apiUrl = 'http://localhost:3000/sites';
+
+  constructor(private http: HttpClient) {}
+
+  getAll(): Observable<SiteArcheologique[]> {
+    return this.http.get<SiteArcheologique[]>(this.apiUrl);
+  }
+
+  getById(id: string): Observable<SiteArcheologique> {
+    return this.http.get<SiteArcheologique>(`${this.apiUrl}/${id}`);
+  }
+
+  add(site: SiteArcheologique): Observable<SiteArcheologique> {
+    return this.http.post<SiteArcheologique>(this.apiUrl, site);
+  }
+
+  update(site: SiteArcheologique): Observable<SiteArcheologique> {
+    return this.http.put<SiteArcheologique>(`${this.apiUrl}/${site.id}`, site);
+  }
+
+  delete(id: string): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
+}
+
+4) Auth service + Guard
+src/app/services/auth.service.ts
+import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthService {
+  private adminEmail = 'admin@heritage.tn';
+  private adminPassword = 'admin123';
+
+  constructor(private router: Router) {}
+
+  login(email: string, password: string): boolean {
+    if (email === this.adminEmail && password === this.adminPassword) {
+      localStorage.setItem('isLoggedIn', 'true');
+      localStorage.setItem('adminEmail', email);
+      return true;
+    }
+    return false;
+  }
+
+  logout(): void {
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('adminEmail');
+    this.router.navigate(['/admin/login']);
+  }
+
+  isAuthenticated(): boolean {
+    return localStorage.getItem('isLoggedIn') === 'true';
+  }
+
+  getAdminEmail(): string | null {
+    return localStorage.getItem('adminEmail');
+  }
+}
+
+src/app/guards/auth.guard.ts
+import { Injectable } from '@angular/core';
+import { CanActivate, Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthGuard implements CanActivate {
+  constructor(private auth: AuthService, private router: Router) {}
+
+  canActivate(): boolean {
+    if (this.auth.isAuthenticated()) {
+      return true;
+    }
+    this.router.navigate(['/admin/login']);
+    return false;
+  }
+}
+
+5) Routing — app-routing.module.ts
+
+src/app/app-routing.module.ts
+
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+// Front
+import { ListComponent } from './pages/front/list/list.component';
+import { DetailComponent } from './pages/front/detail/detail.component';
+import { AboutComponent } from './pages/front/about/about.component';
+
+// Admin
+import { LoginComponent } from './pages/admin/login/login.component';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+import { AddComponent } from './pages/admin/add/add.component';
+import { EditComponent } from './pages/admin/edit/edit.component';
+
+// Guard
+import { AuthGuard } from './guards/auth.guard';
+
+const routes: Routes = [
+  { path: '', redirectTo: '/front/list', pathMatch: 'full' },
+
+  // front
+  { path: 'front/list', component: ListComponent },
+  { path: 'front/detail/:id', component: DetailComponent },
+  { path: 'front/about', component: AboutComponent },
+
+  // admin
+  { path: 'admin/login', component: LoginComponent },
+  { path: 'admin/dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'admin/add', component: AddComponent, canActivate: [AuthGuard] },
+  { path: 'admin/edit/:id', component: EditComponent, canActivate: [AuthGuard] },
+
+  { path: '**', redirectTo: '/front/list' }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule {}
+
+6) AppModule — src/app/app.module.ts
+
+Assure-toi d’importer les modules nécessaires.
+
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+
+// Front components
+import { ListComponent } from './pages/front/list/list.component';
+import { DetailComponent } from './pages/front/detail/detail.component';
+import { AboutComponent } from './pages/front/about/about.component';
+
+// Admin components
+import { LoginComponent } from './pages/admin/login/login.component';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+import { AddComponent } from './pages/admin/add/add.component';
+import { EditComponent } from './pages/admin/edit/edit.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    ListComponent,
+    DetailComponent,
+    AboutComponent,
+    LoginComponent,
+    DashboardComponent,
+    AddComponent,
+    EditComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+
+7) App layout — src/app/app.component.html
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/front/list">Héritage Antique TN</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" routerLink="/front/list">Liste</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/front/about">À propos</a></li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" routerLink="/admin/login">Admin</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-4">
+  <router-outlet></router-outlet>
+</div>
+
+8) Composants principaux (exemples complets)
+
+Note : crée les composants avec ng generate component pages/front/list etc. puis remplace leurs fichiers par les codes ci-dessous.
+
+A) ListComponent
+
+src/app/pages/front/list/list.component.ts
+
+import { Component, OnInit } from '@angular/core';
+import { SiteService } from '../../../services/site.service';
+import { SiteArcheologique } from '../../../models/site-archeologique';
+
+@Component({
+  selector: 'app-list',
+  templateUrl: './list.component.html',
+  styleUrls: ['./list.component.css']
+})
+export class ListComponent implements OnInit {
+  sites: SiteArcheologique[] = [];
+  filtered: SiteArcheologique[] = [];
+  searchName = '';
+  maxPrice: number | null = null;
+
+  constructor(private siteService: SiteService) {}
+
+  ngOnInit(): void {
+    this.load();
+  }
+
+  load(): void {
+    this.siteService.getAll().subscribe(s => {
+      this.sites = s;
+      this.filtered = s;
+    });
+  }
+
+  applyFilter(): void {
+    this.filtered = this.sites.filter(site => {
+      const byName = this.searchName ? site.nom.toLowerCase().startsWith(this.searchName.toLowerCase()) : true;
+      const byPrice = this.maxPrice !== null && this.maxPrice !== undefined ? site.prixEntree <= this.maxPrice : true;
+      return byName && byPrice;
+    });
+  }
+
+  clearFilter(): void {
+    this.searchName = '';
+    this.maxPrice = null;
+    this.filtered = [...this.sites];
+  }
+}
+
+
+src/app/pages/front/list/list.component.html
+
+<div class="mb-3">
+  <form class="row g-2" (ngSubmit)="applyFilter()">
+    <div class="col-md-5">
+      <input class="form-control" placeholder="Recherche par nom (commence par...)" [(ngModel)]="searchName" name="searchName">
+    </div>
+    <div class="col-md-3">
+      <input type="number" class="form-control" placeholder="Prix max" [(ngModel)]="maxPrice" name="maxPrice">
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-primary w-100" type="button" (click)="applyFilter()">Filtrer</button>
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-secondary w-100" type="button" (click)="clearFilter()">Réinitialiser</button>
+    </div>
+  </form>
+</div>
+
+<div class="row">
+  <div class="col-md-4 mb-4" *ngFor="let site of filtered">
+    <div class="card h-100">
+      <img [src]="site.photo" class="card-img-top" [alt]="site.nom" style="height:200px; object-fit:cover;">
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title">{{ site.nom }}</h5>
+        <p class="card-text">{{ site.descriptionCourte }}</p>
+        <p class="mb-1"><strong>Gouvernorat:</strong> {{ site.gouvernorat }}</p>
+        <p class="mb-2"><strong>Prix:</strong> {{ site.prixEntree }} DT</p>
+        <div class="mt-auto">
+          <a [routerLink]="['/front/detail', site.id]" class="btn btn-primary w-100">Voir le détail</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+B) DetailComponent
+
+src/app/pages/front/detail/detail.component.ts
+
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { SiteService } from '../../../services/site.service';
+import { SiteArcheologique } from '../../../models/site-archeologique';
+
+@Component({
+  selector: 'app-detail',
+  templateUrl: './detail.component.html'
+})
+export class DetailComponent implements OnInit {
+  site: SiteArcheologique | null = null;
+  newComment = { nom: '', message: '', note: 5 };
+
+  constructor(
+    private route: ActivatedRoute,
+    private siteService: SiteService,
+    private router: Router
+  ) {}
+
+  ngOnInit(): void {
+    const id = this.route.snapshot.paramMap.get('id')!;
+    if (id) {
+      this.siteService.getById(id).subscribe(s => this.site = s);
+    }
+  }
+
+  addComment(): void {
+    if (!this.site) return;
+    const comment = {
+      nom: this.newComment.nom || 'Anonyme',
+      message: this.newComment.message,
+      note: this.newComment.note,
+      date: new Date().toISOString().split('T')[0]
+    };
+    this.site.comments = this.site.comments || [];
+    this.site.comments.push(comment);
+    // Update on server
+    this.siteService.update(this.site).subscribe(() => {
+      this.newComment = { nom: '', message: '', note: 5 };
+    });
+  }
+
+  goBack(): void {
+    this.router.navigate(['/front/list']);
+  }
+}
+
+
+src/app/pages/front/detail/detail.component.html
+
+<div *ngIf="site">
+  <div class="row">
+    <div class="col-md-6">
+      <img [src]="site.photo" class="img-fluid" [alt]="site.nom" style="max-height:400px; object-fit:cover;">
+    </div>
+    <div class="col-md-6">
+      <h2>{{ site.nom }}</h2>
+      <p><strong>Localisation:</strong> {{ site.localisation }} ({{ site.gouvernorat }})</p>
+      <p><strong>Horaires:</strong> {{ site.horaires }}</p>
+      <p><strong>Prix d'entrée:</strong> {{ site.prixEntree }} DT</p>
+      <p>{{ site.descriptionCourte }}</p>
+
+      <div *ngIf="site.descriptionDetaillee?.length">
+        <h5>Détails historiques</h5>
+        <div *ngFor="let d of site.descriptionDetaillee">
+          <p><strong>{{ d.nom }}</strong> — {{ d.periodeHistorique }} — découvert le {{ d.dateDecouverte }}</p>
+          <p>Musée sur place : {{ d.possedeMusee ? 'Oui' : 'Non' }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <h4>Commentaires</h4>
+  <div *ngIf="site.comments?.length; else noComments">
+    <div *ngFor="let c of site.comments" class="mb-3">
+      <strong>{{ c.nom }}</strong> — <small>{{ c.date }}</small>
+      <div>Note: {{ c.note }}/5</div>
+      <p>{{ c.message }}</p>
+    </div>
+  </div>
+  <ng-template #noComments>
+    <p>Aucun commentaire pour le moment.</p>
+  </ng-template>
+
+  <div class="card p-3 mt-3">
+    <h5>Laisser un commentaire</h5>
+    <div class="mb-2">
+      <input class="form-control" placeholder="Nom" [(ngModel)]="newComment.nom" name="nom">
+    </div>
+    <div class="mb-2">
+      <textarea class="form-control" placeholder="Message" [(ngModel)]="newComment.message" name="message"></textarea>
+    </div>
+    <div class="mb-2">
+      <label>Note</label>
+      <select class="form-select" [(ngModel)]="newComment.note" name="note">
+        <option *ngFor="let n of [5,4,3,2,1]" [value]="n">{{n}}</option>
+      </select>
+    </div>
+    <button class="btn btn-success" (click)="addComment()">Publier</button>
+    <button class="btn btn-secondary ms-2" (click)="goBack()">Retour</button>
+  </div>
+</div>
+
+C) LoginComponent
+
+src/app/pages/admin/login/login.component.ts
+
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../../../services/auth.service';
+
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html'
+})
+export class LoginComponent {
+  email = '';
+  password = '';
+  error = '';
+
+  constructor(private auth: AuthService, private router: Router) {}
+
+  onLogin(): void {
+    if (this.auth.login(this.email, this.password)) {
+      this.router.navigate(['/admin/dashboard']);
+    } else {
+      this.error = 'Email ou mot de passe incorrect';
+    }
+  }
+}
+
+
+src/app/pages/admin/login/login.component.html
+
+<div class="row justify-content-center">
+  <div class="col-md-4">
+    <div class="card p-4">
+      <h4 class="text-center mb-3">Connexion administrateur</h4>
+      <div class="mb-3">
+        <label>Email</label>
+        <input type="email" class="form-control" [(ngModel)]="email" name="email">
+      </div>
+      <div class="mb-3">
+        <label>Mot de passe</label>
+        <input type="password" class="form-control" [(ngModel)]="password" name="password">
+      </div>
+      <button class="btn btn-dark w-100" (click)="onLogin()">Se connecter</button>
+      <div *ngIf="error" class="alert alert-danger mt-2">{{ error }}</div>
+      <div class="mt-2 text-muted small">Email: admin@heritage.tn / Mot de passe: admin123</div>
+    </div>
+  </div>
+</div>
+
+D) DashboardComponent
+
+src/app/pages/admin/dashboard/dashboard.component.ts
+
+import { Component, OnInit } from '@angular/core';
+import { SiteService } from '../../../services/site.service';
+import { SiteArcheologique } from '../../../models/site-archeologique';
+import { AuthService } from '../../../services/auth.service';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html'
+})
+export class DashboardComponent implements OnInit {
+  sites: SiteArcheologique[] = [];
+
+  constructor(
+    private siteService: SiteService,
+    private auth: AuthService,
+    private router: Router
+  ) {}
+
+  ngOnInit(): void {
+    this.load();
+  }
+
+  load(): void {
+    this.siteService.getAll().subscribe(s => this.sites = s);
+  }
+
+  deleteSite(id: string): void {
+    if (!confirm('Voulez-vous supprimer ce site ?')) return;
+    this.siteService.delete(id).subscribe(() => this.load());
+  }
+
+  logout(): void {
+    this.auth.logout();
+  }
+}
+
+
+src/app/pages/admin/dashboard/dashboard.component.html
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h3>Dashboard Admin</h3>
+  <div>
+    <button class="btn btn-secondary me-2" routerLink="/admin/add">Ajouter un site</button>
+    <button class="btn btn-danger" (click)="logout()">Déconnexion</button>
+  </div>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Gouvernorat</th>
+      <th>Prix</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let s of sites">
+      <td>{{ s.nom }}</td>
+      <td>{{ s.gouvernorat }}</td>
+      <td>{{ s.prixEntree }} DT</td>
+      <td>
+        <a [routerLink]="['/admin/edit', s.id]" class="btn btn-sm btn-primary me-2">Modifier</a>
+        <button class="btn btn-sm btn-danger" (click)="deleteSite(s.id)">Supprimer</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+E) AddComponent (formulaire basique)
+
+src/app/pages/admin/add/add.component.ts
+
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { SiteService } from '../../../services/site.service';
+import { SiteArcheologique } from '../../../models/site-archeologique';
+import { v4 as uuidv4 } from 'uuid';
+
+@Component({
+  selector: 'app-add',
+  templateUrl: './add.component.html'
+})
+export class AddComponent {
+  site: Partial<SiteArcheologique> = {
+    descriptionDetaillee: [],
+    comments: []
+  };
+
+  constructor(private siteService: SiteService, private router: Router) {}
+
+  save(): void {
+    const newSite: SiteArcheologique = {
+      id: this.site.id || 'site-' + Date.now(),
+      nom: this.site.nom || '',
+      localisation: this.site.localisation || '',
+      gouvernorat: this.site.gouvernorat || '',
+      photo: this.site.photo || '',
+      prixEntree: this.site.prixEntree || 0,
+      descriptionCourte: this.site.descriptionCourte || '',
+      descriptionDetaillee: this.site.descriptionDetaillee || [],
+      horaires: this.site.horaires || '',
+      comments: this.site.comments || []
+    };
+
+    this.siteService.add(newSite).subscribe(() => {
+      this.router.navigate(['/admin/dashboard']);
+    });
+  }
+}
+
+
+src/app/pages/admin/add/add.component.html
+
+<div class="card p-3">
+  <h4>Ajouter un site</h4>
+  <div class="mb-2">
+    <label>Nom</label>
+    <input class="form-control" [(ngModel)]="site.nom" name="nom">
+  </div>
+  <div class="mb-2">
+    <label>Localisation</label>
+    <input class="form-control" [(ngModel)]="site.localisation" name="localisation">
+  </div>
+  <div class="mb-2">
+    <label>Gouvernorat</label>
+    <input class="form-control" [(ngModel)]="site.gouvernorat" name="gouvernorat">
+  </div>
+  <div class="mb-2">
+    <label>Photo (chemin)</label>
+    <input class="form-control" [(ngModel)]="site.photo" name="photo">
+  </div>
+  <div class="mb-2">
+    <label>Prix entrée</label>
+    <input type="number" class="form-control" [(ngModel)]="site.prixEntree" name="prixEntree">
+  </div>
+  <div class="mb-2">
+    <label>Horaires</label>
+    <input class="form-control" [(ngModel)]="site.horaires" name="horaires">
+  </div>
+  <div class="mb-2">
+    <label>Description courte</label>
+    <textarea class="form-control" [(ngModel)]="site.descriptionCourte" name="descriptionCourte"></textarea>
+  </div>
+  <div class="d-flex gap-2">
+    <button class="btn btn-success" (click)="save()">Enregistrer</button>
+    <button class="btn btn-secondary" routerLink="/admin/dashboard">Annuler</button>
+  </div>
+</div>
+
+
+Pour EditComponent : réutilise le formulaire d’AddComponent en pré-remplissant avec getById() et en appelant update().
+
+9) Installer json-server & lancer
+
+Depuis la racine du projet (là où se trouve db.json) :
+
+npm install -g json-server   # ou utiliser npx
+json-server --watch db.json --port 3000
+# ou
+npx json-server --watch db.json --port 3000
+
+
+API disponíveis:
+
+http://localhost:3000/sites
+
+http://localhost:3000/sites/site-eljeme
+
+10) Démarrer Angular
+
+Dans un autre terminal :
+
+ng serve
+
+
+Ouvre http://localhost:4200.

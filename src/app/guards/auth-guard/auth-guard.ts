@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Auth } from '../../services/auth';
 import { ActivatedRouteSnapshot, CanActivate, GuardResult, MaybeAsync, Router, RouterStateSnapshot } from '@angular/router';
 
@@ -8,15 +8,16 @@ import { ActivatedRouteSnapshot, CanActivate, GuardResult, MaybeAsync, Router, R
   templateUrl: './auth-guard.html',
   styleUrl: './auth-guard.css',
 })
-export class AuthGuard implements CanActivate{
-  constructor(private auth: Auth,private router:Router){}
-  canActivate(): boolean {
-    if(this.auth.isAuth()){
+export class AuthGuard implements CanActivate {
+  private readonly auth: Auth = inject(Auth);
+  private readonly router: Router = inject(Router);
+  canActivate() {
+    if (!this.auth.isAuth()) {
+      this.router.navigate(['/admin/login']);
       return true;
     }
-    this.router.navigate(['/admin/login']);
     return false;
   }
-  
+
 
 }
