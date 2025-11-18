@@ -67,7 +67,7 @@ export class Detail implements OnInit {
       this.site.comments = [];
     }
     this.site.comments.push(comment);
-    this.siteService.updateSiteById(this.site).subscribe(() => {
+    this.siteService.updateSiteById(this.site.id, this.site).subscribe(() => {
       this.commentForm.reset({
         nom: '',
         message: '',

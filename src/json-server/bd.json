@@ -1,44 +1,33 @@
 {
   "sites": [
     {
-      "id": "site-eljeme",
-      "nom": "Amphithéâtre d'El Jem",
-      "localisation": "El Jem",
-      "gouvernorat": "Mahdia",
-      "photo": "/images/el-jem.jpg",
-      "prixEntree": 10,
-      "horaires": "08h00 - 18h00",
-      "descriptionCourte": "L’un des plus grands amphithéâtres romains au monde, symbole de la grandeur antique en Tunisie.",
-      "descriptionDetaillee": [
-        {
-          "nom": "Amphithéâtre d'El Jem",
-          "photo": "/images/el-jem.jpg",
-          "dateDecouverte": "1900-01-01",
-          "possedeMusee": true,
-          "periodeHistorique": "Époque romaine (IIIe siècle)"
-        }
-      ],
-      "comments": [
-        {
-          "nom": "Ahmed Ben Ali",
-          "message": "Magnifique site, très bien conservé et impressionnant à visiter.",
-          "note": 5,
-          "date": "2025-08-12"
-        },
-        {
-          "nom": "Leila Trabelsi",
-          "message": "Superbe monument, mais il faisait très chaud en été, pensez à venir tôt !",
-          "note": 4,
-          "date": "2025-06-22"
-        },
-        {
-          "nom": "lina",
-          "message": "service agréable tres bien  ",
-          "note": 5,
-          "date": "2025-11-16"
-        }
-      ]
+    "id": "site-eljeme",
+    "nom": "Amphithéâtre d'El Jem",
+    "localisation": "El Jem",
+    "gouvernorat": "Mahdia",
+    "photo": "/images/el-jem.jpg",
+    "prixEntree": 10,
+    "horaires": "08h00 - 18h00",
+    "descriptionCourte": "L’un des plus grands amphithéâtres romains au monde, symbole de la grandeur antique en Tunisie.",
+    "descriptionDetaillee": [
+      {
+        "nom": "Amphithéâtre d'El Jem",
+        "photo": "/images/el-jem.jpg",
+        "dateDecouverte": "1900-01-01",
+        "possedeMusee": true,
+        "periodeHistorique": "Époque romaine (IIIe siècle)"
+      }
+    ],
+    "comments": [
+      {
+        "nom": "Ahmed Ben Ali",
+        "message": "Magnifique site, très bien conservé et impressionnant à visiter.",
+        "note": 5,
+        "date": "2025-08-12"
+      }
+    ]
     },
+
     {
       "id": "site-dougga",
       "nom": "Dougga (Thugga)",

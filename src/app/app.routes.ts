@@ -6,7 +6,7 @@ import { Login } from './pages/admin/login/login';
 import { Dashboard } from './pages/admin/dashboard/dashboard';
 import { Add } from './pages/admin/add/add';
 import { Edit } from './pages/admin/edit/edit';
-import { authGuard } from './guards/auth-guard';
+import { AuthGuard } from './guards/auth-guard';
 
 export const routes: Routes = [
     //front office routes
@@ -19,9 +19,9 @@ export const routes: Routes = [
         path: 'admin',
         children: [
             { path: 'login', component: Login },
-            {path: 'dashboard', component: Dashboard, canActivate:[authGuard]},
-            { path: 'add', component: Add,canActivate:[authGuard] },
-            { path: 'edit/:id', component: Edit,canActivate:[authGuard] },
+            {path: 'dashboard', component: Dashboard, canActivate:[AuthGuard]},
+            { path: 'add', component: Add,canActivate:[AuthGuard] },
+            { path: 'edit/:id', component: Edit,canActivate:[AuthGuard] },
         ]
     },
     //error
