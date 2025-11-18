@@ -1,41 +1,26 @@
-<!-- <body class="bg-light">
-<form [formGroup]="adminForm" (ngSubmit)="onLogin()"> 
+<body class="bg-light">
+  <form [formGroup]="adminForm" (ngSubmit)="onSubmit()">
     <div class="container py-5">
       <div class="row justify-content-center">
         <div class="col-md-5">
           <div class="card shadow p-4">
-            <h3 class="text-center mb-4">Connexion Administrateur</h3>
-            <form class="needs-validation" >
-              <div class="mb-3">
-                <label class="form-label">Email : </label>
-                <input type="email" class="form-control" formControlName="email" >
-                <div class="invalid-feedback">Veuillez entrer le nom d'utilisateur.</div> 
-              </div>
-              <div class="mb-3">
-                <label fclass="form-label">Mot de passe : </label>
-                <input type="password" class="form-control" formControlName="password" >
-                <div class="invalid-feedback">Veuillez entrer le mot de passe.</div>
-              </div>
-              <button type="submit" class="btn btn-primary w-100 mt-2" [disabled]="adminForm.invalid">Se connecter</button>
-            </form>
+            <h3 class="text-center mb-4">Administrateur</h3>
+            <div class="mb-3">
+              <label class="form-label">Username : </label>
+              <input type="text" class="form-control" formControlName="username">
+              <div class="invalid-feedback">Veuillez entrer le nom d'utilisateur.</div>
+            </div>
+            <div class="mb-3">
+              <label fclass="form-label">Mot de passe : </label>
+              <input type="password" class="form-control" formControlName="password">
+              <div class="invalid-feedback">Veuillez entrer le mot de passe.</div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 mt-2" [disabled]="adminForm.invalid">Se connecter</button>
+              {{message}}
           </div>
         </div>
       </div>
     </div>
+                
   </form>
-  </body>-->
-<form [formGroup]="adminForm" (ngSubmit)="onLogin()">
-
-  <input type="email" class="form-control"
-         formControlName="email" name="email" placeholder="Email">
-
-  <input type="password" class="form-control mt-2"
-         formControlName="password" name="password" placeholder="Mot de passe">
-
-  <button class="btn btn-primary w-100 mt-3" type="submit">
-    Connexion
-  </button>
-
-</form>
-
-<div class="text-danger mt-2">{{ error }}</div>
+</body>

@@ -22,10 +22,7 @@ export class Detail implements OnInit {
   isOpen: boolean = false;
   openAt: string = '';
   closeAt: string = '';
-
   showComment:boolean=false;
-
-
   checkOpenStatus() {
     if (!this.site || !this.site.horaires) return;
     let [openStr, closeStr] = this.site.horaires.split('-').map(s => s.trim());
