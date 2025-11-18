@@ -294,5 +294,23 @@
         }
       ]
     }
+  ],
+  "admins": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "pwd"
+    }
+  ],
+  "reservations": [
+    {
+      "id": "56ed",
+      "nom": "Carthage",
+      "email": "benkhemismaram150@gmail.com",
+      "tel": "50785578",
+      "site": "",
+      "date": "2025-12-03",
+      "personnes": 2
+    }
   ]
 }

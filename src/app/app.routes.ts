@@ -19,13 +19,9 @@ export const routes: Routes = [
         path: 'admin',
         children: [
             { path: 'login', component: Login },
-            {
-                path: 'dashboard', component: Dashboard, canActivate:[authGuard],
-                children: [
-                    { path: 'add', component: Add,canActivate:[authGuard] },
-                    { path: 'edit/:id', component: Edit,canActivate:[authGuard] },
-                ]
-            },
+            {path: 'dashboard', component: Dashboard, canActivate:[authGuard]},
+            { path: 'add', component: Add,canActivate:[authGuard] },
+            { path: 'edit/:id', component: Edit,canActivate:[authGuard] },
         ]
     },
     //error

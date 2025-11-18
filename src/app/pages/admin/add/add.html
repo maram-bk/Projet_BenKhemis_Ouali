@@ -1,56 +1,44 @@
-<form [formGroup]="siteForm" (ngSubmit)="onSubmit()" class="card p-4 shadow-sm">
-
-  <!-- Infos site -->
-  <div class="row g-3 mb-3">
-    <div class="col-md-6">
-      <label class="form-label">ID</label>
-      <input class="form-control" formControlName="id">
-    </div>
-    <div class="col-md-6">
-      <label class="form-label">Nom</label>
-      <input class="form-control" formControlName="nom">
-    </div>
-    <div class="col-md-6">
-      <label class="form-label">Localisation</label>
-      <input class="form-control" formControlName="localisation">
-    </div>
-    <div class="col-md-6">
-      <label class="form-label">Gouvernorat</label>
-      <input class="form-control" formControlName="gouvernorat">
-    </div>
-    <div class="col-md-6">
-      <label class="form-label">Photo URL</label>
-      <input class="form-control" formControlName="photo">
-    </div>
-    <div class="col-md-6">
-      <label class="form-label">Prix entrée</label>
-      <input type="number" class="form-control" formControlName="prixEntree">
-    </div>
-    <div class="col-12">
-      <label class="form-label">Horaires</label>
-      <input class="form-control" formControlName="horaires">
-    </div>
-    <div class="col-12">
-      <label class="form-label">Description courte</label>
-      <input class="form-control" formControlName="descriptionCourte">
-    </div>
+<div class="card p-3">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h4>Ajouter un site</h4>
+    <button class="btn btn-secondary me-2" routerLink="/admin/dashboard">Retour</button>
   </div>
-
-  <!-- Description détaillée -->
-  <div class="mb-3">
-    <h5>Descriptions détaillées</h5>
-    <button type="button" class="btn btn-sm btn-primary mb-2" (click)="addDetail()">Ajouter</button>
-
-    <div formArrayName="descriptionDetaillee">
-      <div *ngFor="let d of descriptionDetaillee.controls; let i = index" [formGroupName]="i" class="card p-3 mb-2">
+  <form [formGroup]="siteForm" (ngSubmit)="onSubmit()">
+    <div class="mb-2">
+      <label>Nom</label>
+      <input class="form-control" formControlName="nom" name="nom">
+    </div>
+    <div class="mb-2">
+      <label>Localisation</label>
+      <input class="form-control" formControlName="localisation" name="localisation">
+    </div>
+    <div class="mb-2">
+      <label>Gouvernorat</label>
+      <input class="form-control" formControlName="gouvernorat" name="gouvernorat">
+    </div>
+    <div class="mb-2">
+      <label>Photo</label>
+      <input class="form-control" type="file" formControlName="photo" name="photo">
+    </div>
+    <div class="mb-2">
+      <label>Prix entrée</label>
+      <input type="number" class="form-control" formControlName="prixEntree" name="prixEntree">
+    </div>
+    <div class="mb-2">
+      <label>Horaires</label>
+      <input class="form-control" formControlName="horaires" name="horaires">
+    </div>
+    <div class="mb-2">
+      <fieldset formGroupName="detailForm">
+        <strong>Déscription Détaillée</strong>
         <div class="row g-2">
           <div class="col-md-4">
-            <label>Nom (site)</label>
-            <input class="form-control" formControlName="nom" readonly>
+            <label>Nom</label>
+            <input class="form-control" formControlName="nom">
           </div>
           <div class="col-md-4">
-            <label>Photo (site)</label>
-            <input class="form-control" formControlName="photo" readonly>
+            <label>Photo</label>
+            <input type="file" class="form-control" formControlName="photo">
           </div>
           <div class="col-md-4">
             <label>Date découverte</label>
@@ -61,49 +49,14 @@
             <input class="form-control" formControlName="periodeHistorique">
           </div>
           <div class="col-md-2 d-flex align-items-center">
-            <input type="checkbox" class="form-check-input me-2" formControlName="possedeMusee">
-            <label class="form-check-label">Musée ?</label>
-          </div>
-          <div class="col-md-4 text-end">
-            <button type="button" class="btn btn-sm btn-danger" (click)="removeDetail(i)">Supprimer</button>
+            <input type="checkbox" class="form-check-input me-2" formControlName="possedeMusee">Posse de Musée
           </div>
         </div>
-      </div>
+      </fieldset>
     </div>
-  </div>
-
-  <!-- Commentaires -->
-  <div class="mb-3">
-    <h5>Commentaires</h5>
-    <button type="button" class="btn btn-sm btn-secondary mb-2" (click)="addComment()">Ajouter</button>
-
-    <div formArrayName="comments">
-      <div *ngFor="let c of comments.controls; let i = index" [formGroupName]="i" class="card p-3 mb-2">
-        <div class="row g-2">
-          <div class="col-md-4">
-            <input class="form-control" formControlName="nom" placeholder="Nom auteur">
-          </div>
-          <div class="col-md-5">
-            <textarea class="form-control" formControlName="message" placeholder="Commentaire"></textarea>
-          </div>
-          <div class="col-md-2">
-            <input type="number" class="form-control" formControlName="note" min="1" max="5" placeholder="Note">
-          </div>
-          <div class="col-md-1">
-            <input type="date" class="form-control" formControlName="date">
-          </div>
-          <div class="col-12 text-end mt-1">
-            <button type="button" class="btn btn-sm btn-danger" (click)="removeComment(i)">Supprimer</button>
-          </div>
-        </div>
-      </div>
+    <div class="d-flex gap-2">
+      <button class="btn btn-success">Enregistrer</button>
+      <button class="btn btn-secondary" (click)="onResetForm()">Annuler</button>
     </div>
-  </div>
-
-  <button type="submit" class="btn btn-success">Enregistrer</button>
-  <button type="button" class="btn btn-outline-danger ms-2" (click)="siteForm.reset()">Réinitialiser</button>
-</form>
-
-
-
-
+  </form>
+</div>

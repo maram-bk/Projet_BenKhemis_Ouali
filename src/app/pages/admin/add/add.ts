@@ -2,100 +2,70 @@ import { Component, inject, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { SiteArcheologique } from '../../../models/site-archeologique';
 import { SiteService } from '../../../services/site-service';
+import { Router, RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-add',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, RouterLink],
   templateUrl: './add.html',
   styleUrl: './add.css',
 })
 export class Add implements OnInit {
-archeologigue:SiteArcheologique[]=[]
-private readonly siteService:SiteService=inject(SiteService);
-siteForm!: FormGroup;
-fb:FormBuilder=inject(FormBuilder);
-ngOnInit(): void {
-this.siteForm = this.fb.group({
-  id: ['', Validators.required],
-  nom: ['', Validators.required],
-  localisation: ['', Validators.required],
-  gouvernorat: ['', Validators.required],
-  photo: [''],
-  prixEntree: [0, Validators.required],
-  horaires: [''],
-  descriptionCourte: ['', Validators.maxLength(150)],
-  descriptionDetaillee: this.fb.array([]),
-  comments: this.fb.array([])
-});
-
+  private readonly siteService: SiteService = inject(SiteService);
+  private readonly fb: FormBuilder = inject(FormBuilder);
+  siteForm!: FormGroup;
+  sites: SiteArcheologique[] = [];
+  private readonly router: Router = inject(Router);
+  ngOnInit(): void {
+    this.siteForm = this.fb.nonNullable.group({
+      nom: ['', [Validators.required]],
+      localisation: ['', [Validators.required]],
+      gouvernorat: ['', [Validators.required]],
+      photo: ['', [Validators.required, Validators.pattern('/\.(jpg|jpeg|png|webp)$/i')]],
+      prixEntree: ['', [Validators.required, Validators.min(0.1)]],
+      horaires: ['', [Validators.required]],
+      descriptionCourte: ['', [Validators.required]],
+      detailForm: this.fb.nonNullable.group({
+        nom: [''],
+        photo: [''],
+        dateDecouverte: [''],
+        possedeMusee: [''],
+        periodeHistorique: ['']
+      })
+    })
   }
-get descriptionDetaillee(): FormArray {
-  return this.siteForm.get('descriptionDetaillee') as FormArray;
-}
-
-get comments(): FormArray {
-  return this.siteForm.get('comments') as FormArray;
-}
-createDetail(): FormGroup {
-  const siteNom = this.siteForm.get('nom')?.value || '';
-  const sitePhoto = this.siteForm.get('photo')?.value || '';
-  
-  return this.fb.group({
-    nom: [siteNom],
-    photo: [sitePhoto],
-    dateDecouverte: [''],
-    possedeMusee: [false],
-    periodeHistorique: ['']
-  });
-}
-
-addDetail() {
-  this.descriptionDetaillee.push(this.createDetail());
-}
-
-removeDetail(i: number) {
-  this.descriptionDetaillee.removeAt(i);
-}
-
-createComment(): FormGroup {
-  return this.fb.group({
-    nom: [''],
-    message: [''],
-    note: [1, [Validators.min(1), Validators.max(5)]],
-    date: ['']
-  });
-}
-
-addComment() {
-  this.comments.push(this.createComment());
-}
-
-removeComment(i: number) {
-  this.comments.removeAt(i);
-}
-successMessage: string = "ereur d'ajouter";
-onSubmit() {
-if (this.siteForm.invalid) {
-      alert(this.successMessage); 
-      return;
-    }
-
-    const site:SiteArcheologique= this.siteForm.value;
-
-    this.siteService.addSite(site).subscribe({
-      next: (res) => {
-        this.successMessage = 'Site ajouté avec succès !';
-        this.archeologigue.push(res);
-        alert(this.successMessage); 
-        this.siteForm.reset();
-        this.descriptionDetaillee.clear();
-        this.comments.clear();
-      },
-      error: (err) => {
-        console.error(err);
-        alert('Erreur lors de l\'enregistrement du site.');
+  onSubmit() {
+    this.siteService.addSite(this.siteForm.value).subscribe(
+      data => {
+        this.sites.push(data);
+        console.log('reussie');
+        this.router.navigate(['/admin/dashboard'])
       }
-    });
+    )
   }
+
+  get detail() {
+    return this.siteForm.get('descriptionDetaillee') as FormGroup;
+  }
+
+  onResetForm() {
+    this.siteForm.reset({
+      nom: [''],
+      localisation: [''],
+      gouvernorat: [''],
+      photo: [''],
+      prixEntree: [''],
+      horaires: [''],
+      descriptionCourte: [''],
+      detailForm: {
+        nom: [''],
+        photo: [''],
+        dateDecouverte: [''],
+        possedeMusee: [''],
+        periodeHistorique: ['']
+      }
+    })
+  }
+
 
 }

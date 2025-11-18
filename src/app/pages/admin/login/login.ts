@@ -33,4 +33,14 @@ export class Login implements OnInit {
       }
     )
   }
+  get getUser(){
+    return this.adminForm.get('username');
+  }
+  public requiredUser(){
+    return this.getUser?.errors?.['required'] && this.getUser.dirty;
+  }
+
+  get getMdp(){
+    return this.adminForm.get('password');
+  }
 }

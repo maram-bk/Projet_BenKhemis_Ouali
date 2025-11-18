@@ -8,19 +8,24 @@
             <div class="mb-3">
               <label class="form-label">Username : </label>
               <input type="text" class="form-control" formControlName="username">
-              <div class="invalid-feedback">Veuillez entrer le nom d'utilisateur.</div>
+              @if (requiredUser()) {
+              <div class="alert alert-warning">Veuillez entrer le nom d'utilisateur.</div>
+              }
             </div>
             <div class="mb-3">
-              <label fclass="form-label">Mot de passe : </label>
+              <label class="form-label">Mot de passe : </label>
               <input type="password" class="form-control" formControlName="password">
-              <div class="invalid-feedback">Veuillez entrer le mot de passe.</div>
+              @if (getMdp?.errors?.['maxlength'] && getMdp?.dirty){
+              <div class="alert alert-danger">Mot de passe dépasse 8 caractères.</div>
+              }
             </div>
-            <button type="submit" class="btn btn-primary w-100 mt-2" [disabled]="adminForm.invalid">Se connecter</button>
-              {{message}}
+            <button type="submit" class="btn btn-primary w-100 mt-2" [disabled]="adminForm.invalid">Se
+              connecter</button>
+            {{message}}
           </div>
         </div>
       </div>
     </div>
-                
+
   </form>
 </body>
