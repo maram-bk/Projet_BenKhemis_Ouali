@@ -1,1 +1,74 @@
+<div class="container mt-4">
+  <h2 class="mb-4">Modifier le site</h2>
+
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+
+    <div class="mb-3">
+      <label class="form-label">Nom</label>
+      <input type="text" class="form-control" formControlName="nom">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Localisation</label>
+      <input type="text" class="form-control" formControlName="localisation">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Gouvernorat</label>
+      <input type="text" class="form-control" formControlName="gouvernorat">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">URL Photo</label>
+      <input type="text" class="form-control" formControlName="photo">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Prix d'entrée</label>
+      <input type="number" class="form-control" formControlName="prixEntree">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Description Courte</label>
+      <textarea class="form-control" rows="2" formControlName="descriptionCourte"></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Horaires</label>
+      <input type="text" class="form-control" formControlName="horaires">
+    </div>
+
+    <div class="mb-3" formArrayName="descriptionDetaillee">
+      <label class="form-label">Descriptions détaillées</label>
+
+      <div *ngFor="let detail of descriptionDetaillee.controls; let i = index" [formGroupName]="i" class="border p-3 mb-3 rounded">
+
+        <label>Nom</label>
+        <input type="text" class="form-control mb-2" formControlName="nom">
+
+        <label>Photo</label>
+        <input type="text" class="form-control mb-2" formControlName="photo">
+
+        <label>Date découverte</label>
+        <input type="date" class="form-control mb-2" formControlName="dateDecouverte">
+
+        <label>Possède un musée ?</label>
+        <input type="checkbox" class="form-check-input ms-2" formControlName="possedeMusee">
+
+        <label class="mt-2">Période historique</label>
+        <input type="text" class="form-control mb-2" formControlName="periodeHistorique">
+
+        <button type="button" class="btn btn-danger btn-sm mt-2" (click)="removeDetail(i)">Supprimer</button>
+
+      </div>
+
+      <button type="button" class="btn btn-secondary btn-sm" (click)="addDetail()">+ Ajouter détail</button>
+    </div>
+
+    <button class="btn btn-primary mt-3" type="submit">Enregistrer</button>
+    <a routerLink="/admin/dashboard" class="btn btn-secondary mt-3 ms-2">Annuler</a>
+
+  </form>
+</div>
+
 

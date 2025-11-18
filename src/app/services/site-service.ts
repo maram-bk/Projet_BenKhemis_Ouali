@@ -19,9 +19,9 @@ export class SiteService {
   addSite(s: SiteArcheologique): Observable<SiteArcheologique> {
     return this.http.post<SiteArcheologique>(API_URL, s);
   }
-  updateSiteById(site: SiteArcheologique): Observable<SiteArcheologique> {
-    return this.http.put<SiteArcheologique>(`${API_URL}/${site.id}`, site);
-  }
+  updateSiteById(id: string, site: SiteArcheologique): Observable<SiteArcheologique> {
+  return this.http.put<SiteArcheologique>(`${API_URL}/${id}`, site);
+ }
   deleteSiteById(id: string): Observable<void> {
     return this.http.delete<void>(`${API_URL}/${id}`);
   }

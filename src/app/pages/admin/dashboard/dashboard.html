@@ -43,7 +43,7 @@
             <td>{{s.gouvernorat}}</td>
             <td>{{s.prixEntree}}</td>
             <td>
-                <a [routerLink]="['/admin/edit',s.id]" class="btn btn-sm btn-primary me-2">Modifier</a>
+                <a [routerLink]="['/admin/dashboard/edit',s.id]" class="btn btn-sm btn-primary me-2">Modifier</a>
                 <button type="button" class="btn btn-sm btn-danger" (click)="deleteSite(s.id)">Supprimer</button>
             </td>
         </tr>
