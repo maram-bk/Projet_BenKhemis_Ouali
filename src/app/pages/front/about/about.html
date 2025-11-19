@@ -18,7 +18,7 @@
 
         <div class="mb-3">
             <label class="form-label">Site archéologique</label>
-            <select class="form-select" name="site" formControlName="nom">
+            <select class="form-select" name="site" formControlName="site">
                 <option disabled selected value="">Choisissez un site</option>
                 @for (s of sites; track $index) {
                 <option [value]="s.nom">{{ s.nom }}</option>

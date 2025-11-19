@@ -11,9 +11,7 @@ import { SiteService } from '../../../services/site-service';
   styleUrl: './edit.css',
 })
 export class Edit  implements OnInit{
-removeDetail(index: number) {
-  this.descriptionDetaillee.removeAt(index);
-}
+
   editForm!: FormGroup;
   id!: string;
   site!: SiteArcheologique;
@@ -32,7 +30,9 @@ removeDetail(index: number) {
 
   );
   }
-
+removeDetail(index: number) {
+  this.descriptionDetaillee.removeAt(index);
+}
   initForm() {
     this.editForm = this.fb.group({
       nom: [this.site.nom],

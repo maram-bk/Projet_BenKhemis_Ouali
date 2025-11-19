@@ -3,7 +3,7 @@
     <h4>Ajouter un site</h4>
     <button class="btn btn-secondary me-2" routerLink="/admin/dashboard">Retour</button>
   </div>
-  <form [formGroup]="siteForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="siteForm" (submit)="onSubmit()">
     <div class="mb-2">
       <label>Nom</label>
       <input class="form-control" formControlName="nom" name="nom">

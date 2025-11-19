@@ -18,7 +18,7 @@ export class Login implements OnInit {
   ngOnInit(): void {
     this.adminForm = this.fb.nonNullable.group({
       username: ['', [Validators.required]],
-      password: ['', [Validators.required,Validators.maxLength(8)]],
+      password: ['', [Validators.required,Validators.maxLength(20)]],
     })
   }
   onSubmit() {

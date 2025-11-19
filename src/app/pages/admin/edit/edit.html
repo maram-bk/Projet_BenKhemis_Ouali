@@ -1,7 +1,7 @@
 <div class="container mt-4">
   <h2 class="mb-4">Modifier le site</h2>
 
-  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="editForm" (submit)="onSubmit()">
 
     <div class="mb-3">
       <label class="form-label">Nom</label>
@@ -40,8 +40,8 @@
 
     <div class="mb-3" formArrayName="descriptionDetaillee">
       <label class="form-label">Descriptions détaillées</label>
-
-      <div *ngFor="let detail of descriptionDetaillee.controls; let i = index" [formGroupName]="i" class="border p-3 mb-3 rounded">
+      @for (detail of descriptionDetaillee.controls; track $index ;let i = $index ) {
+      <div  [formGroupName]="i" class="border p-3 mb-3 rounded">
 
         <label>Nom</label>
         <input type="text" class="form-control mb-2" formControlName="nom">
@@ -61,12 +61,13 @@
         <button type="button" class="btn btn-danger btn-sm mt-2" (click)="removeDetail(i)">Supprimer</button>
 
       </div>
-
+    }
       <button type="button" class="btn btn-secondary btn-sm" (click)="addDetail()">+ Ajouter détail</button>
     </div>
 
+
     <button class="btn btn-primary mt-3" type="submit">Enregistrer</button>
-    <a routerLink="/admin/dashboard" class="btn btn-secondary mt-3 ms-2">Annuler</a>
+    <a routerLink="../dashboard" class="btn btn-secondary mt-3 ms-2">Annuler</a>
 
   </form>
 </div>

@@ -23,7 +23,7 @@ export class Add implements OnInit {
       gouvernorat: ['', [Validators.required]],
       photo: ['', [Validators.required, Validators.pattern('/\.(jpg|jpeg|png|webp)$/i')]],
       prixEntree: ['', [Validators.required, Validators.min(0.1)]],
-      horaires: ['', [Validators.required]],
+      horaires: ['8h00 - 17h00', [Validators.required]],
       descriptionCourte: ['', [Validators.required]],
       detailForm: this.fb.nonNullable.group({
         nom: [''],

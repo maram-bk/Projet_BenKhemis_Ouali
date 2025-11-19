@@ -7,6 +7,7 @@ import { Dashboard } from './pages/admin/dashboard/dashboard';
 import { Add } from './pages/admin/add/add';
 import { Edit } from './pages/admin/edit/edit';
 import { authGuard } from './guards/auth-guard';
+import { Mdp } from './pages/admin/mdp/mdp';
 
 export const routes: Routes = [
     //front office routes
@@ -20,6 +21,7 @@ export const routes: Routes = [
         children: [
             { path: 'login', component: Login },
             {path: 'dashboard', component: Dashboard, canActivate:[authGuard]},
+            { path: 'mdp', component: Mdp,canActivate:[authGuard] },
             { path: 'add', component: Add,canActivate:[authGuard] },
             { path: 'edit/:id', component: Edit,canActivate:[authGuard] },
         ]
