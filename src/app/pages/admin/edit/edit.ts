@@ -1,38 +1,33 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { SiteArcheologique } from '../../../models/site-archeologique';
-import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule, RouterLink } from '@angular/router';
 import { SiteService } from '../../../services/site-service';
 
 @Component({
   selector: 'app-edit',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, RouterLink],
   templateUrl: './edit.html',
   styleUrl: './edit.css',
 })
-export class Edit  implements OnInit{
-
+export class Edit implements OnInit {
   editForm!: FormGroup;
   id!: string;
   site!: SiteArcheologique;
-  fb = inject(FormBuilder);
-  route = inject(ActivatedRoute);
-  router = inject(Router);
-  siteService = inject(SiteService);
+  fb: FormBuilder = inject(FormBuilder);
+  route: ActivatedRoute = inject(ActivatedRoute);
+  router: Router = inject(Router);
+  siteService: SiteService = inject(SiteService);
 
   ngOnInit(): void {
-    
-  this.id = this.route.snapshot.params['id']; 
-  this.siteService.getSiteById(this.id).subscribe(site =>
-    {
-    this.site = site;
-    this.initForm();}
+    this.id = this.route.snapshot.params['id'];
+    this.siteService.getSiteById(this.id).subscribe(site => {
+      this.site = site;
+      this.initForm();
+    }
 
-  );
+    );
   }
-removeDetail(index: number) {
-  this.descriptionDetaillee.removeAt(index);
-}
   initForm() {
     this.editForm = this.fb.group({
       nom: [this.site.nom],
@@ -43,14 +38,14 @@ removeDetail(index: number) {
       descriptionCourte: [this.site.descriptionCourte],
       horaires: [this.site.horaires],
       descriptionDetaillee: this.fb.array(
-      this.site.descriptionDetaillee?.map(d => this.fb.group({
-        nom: [d.nom],
-        photo: [d.photo],
-        dateDecouverte: [d.dateDecouverte],
-        possedeMusee: [d.possedeMusee],
-        periodeHistorique: [d.periodeHistorique]
-      })) || []
-    )
+        this.site.descriptionDetaillee?.map(d => this.fb.group({
+          nom: [d.nom],
+          photo: [d.photo],
+          dateDecouverte: [d.dateDecouverte],
+          possedeMusee: [d.possedeMusee],
+          periodeHistorique: [d.periodeHistorique]
+        })) || []
+      )
     });
   }
 
@@ -60,12 +55,17 @@ removeDetail(index: number) {
 
   addDetail() {
     this.descriptionDetaillee.push(this.fb.group({
-    nom: [''],
-    photo: [''],
-    dateDecouverte: [''],
-    possedeMusee: [false],
-    periodeHistorique: ['']
-  }));
+      nom: [''],
+      photo: [''],
+      dateDecouverte: [''],
+      possedeMusee: [false],
+      periodeHistorique: ['']
+    }));
+  }
+
+
+  removeDetail(index: number) {
+    this.descriptionDetaillee.removeAt(index);
   }
 
   onSubmit() {
@@ -75,7 +75,7 @@ removeDetail(index: number) {
         ...this.editForm.value
       };
 
-      this.siteService.updateSiteById(this.id,updatedSite).subscribe(() => {
+      this.siteService.updateSiteById(this.id, updatedSite).subscribe(() => {
         alert("Site modifié avec succès !");
         this.router.navigate(['/admin/dashboard/']);
       });

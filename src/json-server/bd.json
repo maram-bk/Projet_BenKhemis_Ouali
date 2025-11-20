@@ -26,10 +26,23 @@
           "date": "2025-08-12"
         },
         {
+<<<<<<< HEAD
           "nom": "lina",
           "message": "dcf",
           "note": 5,
           "date": "2025-11-19"
+=======
+          "nom": "maram",
+          "message": "bien",
+          "note": 5,
+          "date": "2025-11-20"
+        },
+        {
+          "nom": "eya",
+          "message": "jaime pas",
+          "note": 1,
+          "date": "2025-11-20"
+>>>>>>> 325c347 (test)
         }
       ]
     },
@@ -102,6 +115,12 @@
           "message": "Un site incontournable si vous êtes à Tunis. Vue magnifique sur la mer.",
           "note": 5,
           "date": "2025-08-03"
+        },
+        {
+          "nom": "maram",
+          "message": "très bien",
+          "note": 5,
+          "date": "2025-11-19"
         }
       ]
     },
@@ -298,6 +317,7 @@
   ],
   "reservations": [
     {
+<<<<<<< HEAD
       "id": "e1cd",
       "nom": "Ouali Lina",
       "email": "linawali50@gmail.com",
@@ -305,6 +325,15 @@
       "site": "Carthage",
       "date": "2025-12-06",
       "personnes": 5
+=======
+      "id": "6e69",
+      "nom": "Maram Ben Khemis",
+      "email": "benkhemismaram150@gmail.com",
+      "tel": "50785578",
+      "site": "Carthage",
+      "date": "2025-12-03",
+      "personnes": 2
+>>>>>>> 325c347 (test)
     }
   ]
 }

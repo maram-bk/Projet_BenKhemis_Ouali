@@ -10,12 +10,12 @@ import { authGuard } from './guards/auth-guard';
 import { Mdp } from './pages/admin/mdp/mdp';
 
 export const routes: Routes = [
-    //front office routes
+    //front
     { path: '', redirectTo: 'front/list', pathMatch: 'full' },
     { path: 'front/list', component: List },
     { path: 'front/detail/:id', component: Detail },
     { path: 'front/about', component: About },
-    //admin routes
+    //admin
     {
         path: 'admin',
         children: [

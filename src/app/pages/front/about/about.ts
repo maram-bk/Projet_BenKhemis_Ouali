@@ -35,17 +35,18 @@ export class About {
     console.log('Réservation envoyée :', this.reserveForm.value);
     this.http.post('http://localhost:3000/reservations', this.reserveForm.value).subscribe(() => {
       this.success = true;
+      this.onResetForm();
     });
 
   }
   onResetForm() {
     this.reserveForm.reset({
-      nom: [''],
-      email: [''],
-      tel: [''],
-      site: [''],
-      date: [''],
-      personnes: [1]
+      nom: '',
+      email: '',
+      tel: '',
+      site: '',
+      date: '',
+      personnes: 1
     })
   }
 }
