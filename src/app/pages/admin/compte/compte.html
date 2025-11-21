@@ -1,9 +1,10 @@
 <h3>Mon Compte Admin</h3>
 
 <div class="card p-3">
-    <p><strong>Nom :</strong> {{ admin.username }}</p>
-    <p><strong>Mot de Passe :</strong> {{ admin.password }}</p>
-</div>
+    <p><strong>Nom :</strong> {{ admin?.nom}}</p>
+    <p><strong>Prénom :</strong> {{ admin?.prenom}}</p>
+    <p><strong>Email :</strong> {{ admin?.email }}</p>
+</div><br>
     <button class="btn btn-danger me-2" (click)="onDisconnect()">Déconnexion</button>
     <button class="btn btn-warning me-2"  [routerLink]="['/admin/mdp']">Modifer votre mot de passe</button>
     <button class="btn btn-secondary " (click)="onBack()">Retour</button>

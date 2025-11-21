@@ -12,4 +12,8 @@ export interface SiteArcheologique {
     descriptionDetaillee?: SiteDetail[];
     horaires: string;
     comments?: Commentaire[];
+
+    //
+    latitude:number;
+    longitude:number;
 }

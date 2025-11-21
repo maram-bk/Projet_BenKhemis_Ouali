@@ -24,23 +24,10 @@
           "message": "Magnifique site, très bien conservé et impressionnant à visiter.",
           "note": 5,
           "date": "2025-08-12"
-<<<<<<< HEAD
-        },
-        {
-          "nom": "lina",
-          "message": "hi hi hi",
-          "note": 3,
-          "date": "2025-11-20"
-        },
-        {
-          "nom": "lina",
-          "message": "hi hi",
-          "note": 3,
-          "date": "2025-11-20"
-=======
->>>>>>> 67e476d19d344523e58f135118a3b79f5bff79c5
         }
-      ]
+      ],
+      "latitude": 35.3000,
+      "longitude": 10.7167
     },
     {
       "id": "site-dougga",
@@ -73,7 +60,9 @@
           "note": 4,
           "date": "2025-03-15"
         }
-      ]
+      ],
+      "latitude": 36.4200,
+      "longitude": 9.2200
     },
     {
       "id": "site-carthage",
@@ -118,7 +107,9 @@
           "note": 5,
           "date": "2025-11-19"
         }
-      ]
+      ],
+      "latitude": 36.8529,
+      "longitude": 10.3239
     },
     {
       "id": "site-bullaregia",
@@ -163,7 +154,9 @@
           "note": 5,
           "date": "2025-11-16"
         }
-      ]
+      ],
+      "latitude": 36.5000,
+      "longitude": 8.7833
     },
     {
       "id": "site-sbeitla",
@@ -202,7 +195,9 @@
           "note": 0,
           "date": "2025-11-16"
         }
-      ]
+      ],
+      "latitude": 35.2333,
+      "longitude": 9.1167
     },
     {
       "id": "site-oudna",
@@ -235,7 +230,9 @@
           "note": 5,
           "date": "2025-08-25"
         }
-      ]
+      ],
+      "latitude": 36.6947,
+      "longitude": 10.2333
     },
     {
       "id": "site-haidra",
@@ -268,7 +265,9 @@
           "note": 5,
           "date": "2025-09-18"
         }
-      ]
+      ],
+      "latitude": 34.9667,
+      "longitude": 8.8833
     },
     {
       "id": "site-thuburbo",
@@ -301,16 +300,28 @@
           "note": 4,
           "date": "2025-08-18"
         }
-      ]
+      ],
+      "latitude": 36.3670,
+      "longitude": 10.0500
     }
   ],
   "admins": [
     {
       "id": "1",
       "username": "admin",
-      "password": "123"
+      "password": "maram123",
+      "email": "benkhemsimaram150@gmail.com",
+      "nom": "Ben Khemis",
+      "prenom": "Maram"
+    },
+    {
+      "id": "2",
+      "username": "admin",
+      "password": "lina123",
+      "email": "linawali50@gmail.com",
+      "nom": "Ouali",
+      "prenom": "Lina"
     }
   ],
-  "reservations": [
-  ]
+  "reservations": []
 }

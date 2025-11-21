@@ -18,7 +18,7 @@ export class Mdp {
   private http: HttpClient=inject(HttpClient);
 private router:Router=inject(Router);
   ngOnInit(): void {
-    this.passwordForm = this.fb.group({
+    this.passwordForm = this.fb.nonNullable.group({
       oldPassword: ['', Validators.required],
       newPassword: ['', [Validators.required, Validators.minLength(6)]]
     });
@@ -33,12 +33,12 @@ private router:Router=inject(Router);
   }
 
   changePassword() {
+    if(this.passwordForm.invalid) return;
     let oldPwd = this.passwordForm.value.oldPassword;
     let newPwd = this.passwordForm.value.newPassword;
     this.http.get<any>(`${this.API_URL}/${this.adminId}`).subscribe(admin => {
 
       if (admin.password !== oldPwd) {
-        
         this.oldPasswordIncorrect = true;
         return;
       }

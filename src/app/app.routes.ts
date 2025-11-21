@@ -11,13 +11,11 @@ import { Mdp } from './pages/admin/mdp/mdp';
 import { Reservation } from './pages/front/reservation/reservation';
 import { Compte } from './pages/admin/compte/compte';
 import { Error } from './pages/error/error';
-import { Localisation } from './pages/front/localisation/localisation';
 
 export const routes: Routes = [
     //front
     { path: '', redirectTo: 'front/list', pathMatch: 'full' },
     { path: 'front/list', component: List },
-    {path:'front/localisation',component:Localisation},
     { path: 'front/detail/:id', component: Detail },
     {path:'front/reservation',component:Reservation},
     { path: 'front/about', component: About },

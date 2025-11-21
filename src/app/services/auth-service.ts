@@ -17,6 +17,8 @@ export class AuthService {
         let connected = admin.find(a => a.username === username && a.password === pwd);
         if (connected) {
           localStorage.setItem("state", "connected");
+          //hdhi pour que les deux nconnectiw b different compte
+          localStorage.setItem("adminId",connected.id);
           return true;
         }
         localStorage.setItem("state", "disconnected");
@@ -26,6 +28,7 @@ export class AuthService {
   }
   logout() {
     localStorage.setItem("state", "disconnected");
+    localStorage.removeItem("adminId");
   }
   isLogged(): boolean {
     return localStorage.getItem("state") === "connected";
