@@ -4,18 +4,18 @@ import { map, Observable, of } from 'rxjs';
 import { SiteArcheologique } from '../models/site-archeologique';
 
 
-const API_URL="http://localhost:3000/admins";
+const API_URL = "http://localhost:3000/admins";
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private http:HttpClient=inject(HttpClient);
-  private site:SiteArcheologique[]=[];
+  private http: HttpClient = inject(HttpClient);
+  private site: SiteArcheologique[] = [];
   logIn(username: string, pwd: string): Observable<boolean> {
     return this.http.get<any[]>(API_URL).pipe(
-      map(admin=>{
-        let connected=admin.find(a=>a.username===username && a.password===pwd);
-        if(connected){
+      map(admin => {
+        let connected = admin.find(a => a.username === username && a.password === pwd);
+        if (connected) {
           localStorage.setItem("state", "connected");
           return true;
         }
@@ -27,4 +27,8 @@ export class AuthService {
   logout() {
     localStorage.setItem("state", "disconnected");
   }
+  isLogged(): boolean {
+    return localStorage.getItem("state") === "connected";
+  }
+
 }

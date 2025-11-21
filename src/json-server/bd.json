@@ -24,25 +24,6 @@
           "message": "Magnifique site, très bien conservé et impressionnant à visiter.",
           "note": 5,
           "date": "2025-08-12"
-        },
-        {
-<<<<<<< HEAD
-          "nom": "lina",
-          "message": "dcf",
-          "note": 5,
-          "date": "2025-11-19"
-=======
-          "nom": "maram",
-          "message": "bien",
-          "note": 5,
-          "date": "2025-11-20"
-        },
-        {
-          "nom": "eya",
-          "message": "jaime pas",
-          "note": 1,
-          "date": "2025-11-20"
->>>>>>> 325c347 (test)
         }
       ]
     },
@@ -312,28 +293,9 @@
     {
       "id": "1",
       "username": "admin",
-      "password": "lina,maram"
+      "password": "123"
     }
   ],
   "reservations": [
-    {
-<<<<<<< HEAD
-      "id": "e1cd",
-      "nom": "Ouali Lina",
-      "email": "linawali50@gmail.com",
-      "tel": "27730034",
-      "site": "Carthage",
-      "date": "2025-12-06",
-      "personnes": 5
-=======
-      "id": "6e69",
-      "nom": "Maram Ben Khemis",
-      "email": "benkhemismaram150@gmail.com",
-      "tel": "50785578",
-      "site": "Carthage",
-      "date": "2025-12-03",
-      "personnes": 2
->>>>>>> 325c347 (test)
-    }
   ]
 }

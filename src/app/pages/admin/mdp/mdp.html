@@ -1,4 +1,4 @@
-<form [formGroup]="passwordForm" (submit)="changePassword()">
+<form [formGroup]="passwordForm" (ngsubmit)="changePassword()">
 
   <label>Ancien mot de passe</label>
   <input type="password" formControlName="oldPassword" class="form-control">
@@ -6,12 +6,9 @@
   <div class="alert alert-danger mt-2">
     Le mot de passe est incorrect
   </div>}
-
   <label>Nouveau mot de passe</label>
   <input type="password" formControlName="newPassword" class="form-control">
-
-  <button class="btn btn-primary mt-2" type="submit">Changer</button>
-
+  <button class="btn btn-primary mt-2" type="submit" (click)="changePassword()">Changer</button>
 </form>
 
 
