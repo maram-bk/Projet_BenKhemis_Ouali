@@ -13,6 +13,8 @@ import { StarcommentPipe } from '../../../starcomment-pipe';
   styleUrl: './detail.css',
 })
 export class Detail implements OnInit {
+  
+
   site!: SiteArcheologique;
   private readonly fb: FormBuilder = inject(FormBuilder);
   private readonly siteService: SiteService = inject(SiteService);
@@ -84,6 +86,27 @@ export class Detail implements OnInit {
   onShowComments(){
     this.showComment = !this.showComment;
   }
+  editingIndex=0;
+onEditComment(index: number) {
+  // exemple : ouvrir le formulaire pour éditer le commentaire
+  const comment = this.site.comments![index];
+  this.commentForm.patchValue({
+    nom: comment.nom,
+    message: comment.message,
+    note: comment.note
+  });
+  this.editingIndex = index;
+  this.showComment = true;
+}
+
+onDeleteComment(index: number) {
+  if (confirm("Voulez-vous vraiment supprimer ce commentaire ?")) {
+    this.site.comments!.splice(index, 1);
+  }
+}
+
+
+
 
 
 

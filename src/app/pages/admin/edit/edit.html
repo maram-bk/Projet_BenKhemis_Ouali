@@ -41,7 +41,7 @@
     <div class="mb-3" formArrayName="descriptionDetaillee">
       <label class="form-label">Descriptions détaillées</label>
       @for (detail of descriptionDetaillee.controls; track $index ;let i = $index ) {
-      <div  [formGroupName]="i" class="border p-3 mb-3 rounded">
+      <div [formGroupName]="i" class="border p-3 mb-3 rounded">
 
         <label>Nom</label>
         <input type="text" class="form-control mb-2" formControlName="nom">
@@ -61,15 +61,25 @@
         <button type="button" class="btn btn-danger btn-sm mt-2" (click)="removeDetail(i)">Supprimer</button>
 
       </div>
-    }
+      }
       <button type="button" class="btn btn-secondary btn-sm" (click)="addDetail()">+ Ajouter détail</button>
     </div>
+    <div formArrayName="comments" class="mt-4">
+      <h5>Commentaires</h5>
+      @for (comment of comments.controls; track $index ;let i = $index) {
+      <div [formGroupName]="i" class="border p-3 mb-2 rounded">
 
+        <p><strong>{{ comment.get('nom')?.value }}</strong> ({{ comment.get('date')?.value }})</p>
+        <p>{{ comment.get('message')?.value }}</p>
+        <p>Note : {{ comment.get('note')?.value }}/5</p>
+
+        <button type="button" class="btn btn-danger btn-sm" (click)="removeComment(i)">Supprimer</button>
+      </div>
+    }
+    </div>
 
     <button class="btn btn-primary mt-3" type="submit">Enregistrer</button>
-    <a routerLink="../dashboard" class="btn btn-secondary mt-3 ms-2">Annuler</a>
+    <button routerLink="../dashboard" class="btn btn-secondary mt-3 ms-2">Annuler</button>
 
   </form>
 </div>
-
-

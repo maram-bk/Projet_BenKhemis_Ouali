@@ -30,9 +30,7 @@ export class Edit  implements OnInit{
 
   );
   }
-removeDetail(index: number) {
-  this.descriptionDetaillee.removeAt(index);
-}
+
   initForm() {
     this.editForm = this.fb.group({
       nom: [this.site.nom],
@@ -50,10 +48,23 @@ removeDetail(index: number) {
         possedeMusee: [d.possedeMusee],
         periodeHistorique: [d.periodeHistorique]
       })) || []
+    ),
+    comments: this.fb.array(
+      this.site.comments?.map(c => this.fb.group({
+        nom: [c.nom],
+        message: [c.message],
+        note: [c.note],
+        date: [c.date]
+      })) || []
     )
     });
   }
-
+  get comments() {
+  return this.editForm.get('comments') as FormArray;
+}
+  removeComment(index: number) {
+  this.comments.removeAt(index);
+}
   get descriptionDetaillee() {
     return this.editForm.get('descriptionDetaillee') as FormArray;
   }
@@ -67,7 +78,9 @@ removeDetail(index: number) {
     periodeHistorique: ['']
   }));
   }
-
+removeDetail(index: number) {
+  this.descriptionDetaillee.removeAt(index);
+}
   onSubmit() {
     if (this.editForm.valid) {
       let updatedSite: SiteArcheologique = {
