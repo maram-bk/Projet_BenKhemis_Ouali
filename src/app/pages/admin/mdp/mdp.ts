@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mdp',
@@ -15,7 +16,7 @@ export class Mdp {
   adminId = '1';
  private fb:FormBuilder=inject(FormBuilder);
   private http: HttpClient=inject(HttpClient);
-
+private router:Router=inject(Router);
   ngOnInit(): void {
     this.passwordForm = this.fb.group({
       oldPassword: ['', Validators.required],
@@ -47,6 +48,7 @@ export class Mdp {
           alert("Mot de passe modifié avec succès !");
           this.passwordForm.reset();
           this.oldPasswordIncorrect = false;
+          this.router.navigate(['/admin/login'])
         });
   })}
 }

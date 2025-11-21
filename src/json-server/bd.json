@@ -24,6 +24,7 @@
           "message": "Magnifique site, très bien conservé et impressionnant à visiter.",
           "note": 5,
           "date": "2025-08-12"
+<<<<<<< HEAD
         },
         {
           "nom": "lina",
@@ -36,6 +37,8 @@
           "message": "hi hi",
           "note": 3,
           "date": "2025-11-20"
+=======
+>>>>>>> 67e476d19d344523e58f135118a3b79f5bff79c5
         }
       ]
     },
@@ -108,6 +111,12 @@
           "message": "Un site incontournable si vous êtes à Tunis. Vue magnifique sur la mer.",
           "note": 5,
           "date": "2025-08-03"
+        },
+        {
+          "nom": "maram",
+          "message": "très bien",
+          "note": 5,
+          "date": "2025-11-19"
         }
       ]
     },
@@ -299,18 +308,9 @@
     {
       "id": "1",
       "username": "admin",
-      "password": "lina,maram"
+      "password": "123"
     }
   ],
   "reservations": [
-    {
-      "id": "e1cd",
-      "nom": "Ouali Lina",
-      "email": "linawali50@gmail.com",
-      "tel": "27730034",
-      "site": "Carthage",
-      "date": "2025-12-06",
-      "personnes": 5
-    }
   ]
 }

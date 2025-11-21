@@ -1,9 +1,10 @@
 <div class="d-flex justify-content-between align-items-center mb-3">
     <h3>Dashboard Admin</h3>
-    <div>
+    <div class="d-flex gap-2">
         <button class="btn btn-secondary me-2" routerLink="/admin/add">Ajouter un site</button>
-        <button class="btn btn-warning" ><a [routerLink]="['/admin/mdp']">Modifer votre mot de passe</a></button>
-        <button class="btn btn-danger" (click)="onDisconnect()">Déconnexion</button>
+        <button class="btn btn-danger me-2" (click)="onDisconnect()">Déconnexion</button>
+        <button routerLink="/admin/compte" class="nav-link" title="Mon Compte"> <i class="bi bi-person-circle"
+                style="font-size: 1.4rem"></i> Mon Compte</button>
     </div>
 </div>
 <table class="table table-striped">
@@ -29,4 +30,4 @@
     </tbody>
 </table>
 
-    <router-outlet></router-outlet>
+<router-outlet></router-outlet>

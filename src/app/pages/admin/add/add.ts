@@ -32,7 +32,13 @@ export class Add implements OnInit {
         possedeMusee: [''],
         periodeHistorique: ['']
       })
-    })
+    });
+    this.siteForm.get('nom')?.valueChanges.subscribe(value => {
+      this.siteForm.get('detailForm.nom')?.setValue(value);
+    });
+    this.siteForm.get('photo')?.valueChanges.subscribe(value => {
+      this.siteForm.get('detailForm.photo')?.setValue(value);
+    });
   }
   onSubmit() {
     this.siteService.addSite(this.siteForm.value).subscribe(

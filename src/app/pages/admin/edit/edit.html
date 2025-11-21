@@ -19,7 +19,7 @@
     </div>
 
     <div class="mb-3">
-      <label class="form-label">URL Photo</label>
+      <label class="form-label">Photo</label>
       <input type="text" class="form-control" formControlName="photo">
     </div>
 
@@ -64,6 +64,7 @@
       }
       <button type="button" class="btn btn-secondary btn-sm" (click)="addDetail()">+ Ajouter détail</button>
     </div>
+
     <div formArrayName="comments" class="mt-4">
       <h5>Commentaires</h5>
       @for (comment of comments.controls; track $index ;let i = $index) {
@@ -77,9 +78,7 @@
       </div>
     }
     </div>
-
     <button class="btn btn-primary mt-3" type="submit">Enregistrer</button>
-    <button routerLink="../dashboard" class="btn btn-secondary mt-3 ms-2">Annuler</button>
-
+    <button type="button" routerLink="/admin/dashboard" class="btn btn-secondary mt-3 ms-2">Annuler</button>
   </form>
 </div>

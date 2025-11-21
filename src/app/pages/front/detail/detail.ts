@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { SiteArcheologique } from '../../../models/site-archeologique';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { ActivatedRoute, Route, Router, RouterLink } from '@angular/router';
 import { SiteService } from '../../../services/site-service';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
@@ -8,7 +8,7 @@ import { StarcommentPipe } from '../../../starcomment-pipe';
 
 @Component({
   selector: 'app-detail',
-  imports: [ReactiveFormsModule, DatePipe, StarcommentPipe],
+  imports: [ReactiveFormsModule, DatePipe, StarcommentPipe, RouterLink],
   templateUrl: './detail.html',
   styleUrl: './detail.css',
 })
