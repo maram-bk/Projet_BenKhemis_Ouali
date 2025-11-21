@@ -13,13 +13,13 @@ export class About implements OnInit {
   API_URL = "http://localhost:3000/sites";
   private map!: L.Map;
 
- ngOnInit() : void{
-  this.initMap();
-  this.map.whenReady(() => {
-    this.map.invalidateSize();
-  });
-  this.loadSites();
-}
+  ngOnInit(): void {
+    this.initMap();
+    this.map.whenReady(() => {
+      this.map.invalidateSize();
+    });
+    this.loadSites();
+  }
   private initMap() {
     this.map = L.map('map').setView([36.8, 10.18], 7);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -48,9 +48,10 @@ export class About implements OnInit {
               <img src="${site.photo}" width="150" style="border-radius:8px;">
               <h5 style="margin-top:8px">${site.nom}</h5>
               <p>${site.gouvernorat}</p>
-            </div>`)
+                    <a href="/front/detail/${site.id}" style="text-decoration:none; color:blue;">Voir détails</a>
+            </div>`);
         }
-      });
+      })
     })
   }
 }

@@ -2,13 +2,10 @@
   height: 600px;
   width: 100%;
 }
-
-/* Style des mini-images sur la carte */
 .marker-wrapper {
   background: transparent;
   border: none;
 }
-
 .custom-marker {
   display: flex;
   flex-direction: column;
