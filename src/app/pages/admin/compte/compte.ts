@@ -22,10 +22,6 @@ export class Compte {
       this.admin = data;
     });
   }
-  onDisconnect() {
-    this.authService.logout();
-    this.router.navigate(['/admin/login']);
-  }
 
   onBack() {
     this.router.navigate(['/admin/dashboard']);
