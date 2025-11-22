@@ -16,4 +16,5 @@ export interface SiteArcheologique {
     //
     latitude:number;
     longitude:number;
+
 }

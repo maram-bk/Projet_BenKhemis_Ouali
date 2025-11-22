@@ -13,7 +13,7 @@ import { StarcommentPipe } from '../../../starcomment-pipe';
   styleUrl: './detail.css',
 })
 export class Detail implements OnInit {
-  
+
 
   site!: SiteArcheologique;
   private readonly fb: FormBuilder = inject(FormBuilder);
@@ -24,7 +24,7 @@ export class Detail implements OnInit {
   isOpen: boolean = false;
   openAt: string = '';
   closeAt: string = '';
-  showComment:boolean=false;
+  showComment: boolean = false;
   checkOpenStatus() {
     if (!this.site || !this.site.horaires) return;
     let [openStr, closeStr] = this.site.horaires.split('-').map(s => s.trim());
@@ -68,7 +68,13 @@ export class Detail implements OnInit {
     if (!this.site.comments) {
       this.site.comments = [];
     }
-    this.site.comments.push(comment);
+    if (this.editingIndex >= 0) {
+      this.site.comments[this.editingIndex] = comment;
+      this.editingIndex = -1;
+    }
+    else {
+      this.site.comments.push(comment);
+    }
     this.siteService.updateSiteById(this.site.id, this.site).subscribe(() => {
       this.commentForm.reset({
         nom: '',
@@ -76,38 +82,33 @@ export class Detail implements OnInit {
         note: 5
       })
     })
-    this.showComment=false;
-    
+    this.showComment = false;
+
   }
   onBack() {
     this.router.navigate(['/front/list']);
   }
 
-  onShowComments(){
+  onShowComments() {
     this.showComment = !this.showComment;
   }
-  editingIndex=0;
-onEditComment(index: number) {
-  // exemple : ouvrir le formulaire pour éditer le commentaire
-  const comment = this.site.comments![index];
-  this.commentForm.patchValue({
-    nom: comment.nom,
-    message: comment.message,
-    note: comment.note
-  });
-  this.editingIndex = index;
-  this.showComment = true;
-}
-
-onDeleteComment(index: number) {
-  if (confirm("Voulez-vous vraiment supprimer ce commentaire ?")) {
-    this.site.comments!.splice(index, 1);
+  editingIndex = 0;
+  onEditComment(index: number) {
+    // exemple : ouvrir le formulaire pour éditer le commentaire
+    const comment = this.site.comments![index];
+    this.commentForm.patchValue({
+      nom: comment.nom,
+      message: comment.message,
+      note: comment.note
+    });
+    this.editingIndex = index;
+    this.showComment = true;
   }
-}
 
-
-
-
-
+  onDeleteComment(index: number) {
+    if (confirm("Voulez-vous vraiment supprimer ce commentaire ?")) {
+      this.site.comments!.splice(index, 1);
+    }
+  }
 
 }

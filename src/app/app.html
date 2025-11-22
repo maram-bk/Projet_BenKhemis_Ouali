@@ -1,4 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<div class="app-wrapper d-flex flex-column min-vh-100">
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
         <a class="navbar-brand" routerLink="/front/list">Héritage Antique TN</a>
         <div class="collapse navbar-collapse">
@@ -12,6 +13,13 @@
         </div>
     </div>
 </nav>
-<div class="container mt-4">
+<main class="flex-fill container mt-4">
     <router-outlet></router-outlet>
+</main>
+<footer class="bg-dark text-white mt-5 p-4 text-center">
+    &copy; 2025 Héritage Antique TN <br>
+    <a href="mailto:benkhemismaram150@gmail.com" class="text-white text-decoration-underline me-3"><i class="bi bi-envelope-at"></i></a>
+    <a href="https://www.instagram.com" target="_blank" class="text-white text-decoration-underline me-3"><i class="bi bi-instagram"></i></a>
+    <a href="https://wa.me/50785578"  target="_blank" class="text-white text-decoration-underline me-3"><i class="bi bi-whatsapp"></i></a>
+</footer>
 </div>

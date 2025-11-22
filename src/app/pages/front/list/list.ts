@@ -3,6 +3,7 @@ import { SiteArcheologique } from '../../../models/site-archeologique';
 import { SiteService } from '../../../services/site-service';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from "@angular/router";
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-list',
@@ -14,6 +15,7 @@ export class List implements OnInit {
   sites: SiteArcheologique[] = [];
   filtered: SiteArcheologique[] = [];
   private readonly siteService: SiteService = inject(SiteService);
+  private http: HttpClient = inject(HttpClient);
   searchName = "";
   maxPrix: number | null = null;
   ngOnInit(): void {
@@ -35,4 +37,5 @@ export class List implements OnInit {
     this.maxPrix = null;
     this.filtered = [...this.sites];
   }
+
 }

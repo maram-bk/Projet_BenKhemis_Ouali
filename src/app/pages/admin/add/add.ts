@@ -21,24 +21,30 @@ export class Add implements OnInit {
       nom: ['', [Validators.required]],
       localisation: ['', [Validators.required]],
       gouvernorat: ['', [Validators.required]],
-      photo: ['', [Validators.required, Validators.pattern('/\.(jpg|jpeg|png|webp)$/i')]],
+      photo: ['', [Validators.required, Validators.pattern(/\.(jpg|jpeg|png|webp)$/i)]],
       prixEntree: ['', [Validators.required, Validators.min(0.1)]],
       horaires: ['8h00 - 17h00', [Validators.required]],
       descriptionCourte: ['', [Validators.required]],
-      detailForm: this.fb.nonNullable.group({
-        nom: [''],
-        photo: [''],
-        dateDecouverte: [''],
-        possedeMusee: [''],
-        periodeHistorique: ['']
-      })
+      latitude:['',[Validators.required]],
+      longitude:['',[Validators.required]],
+      details: this.fb.array([this.createDetail()])
     });
     this.siteForm.get('nom')?.valueChanges.subscribe(value => {
-      this.siteForm.get('detailForm.nom')?.setValue(value);
+      (this.details.at(0) as FormGroup).get('nomD')?.setValue(value);
     });
     this.siteForm.get('photo')?.valueChanges.subscribe(value => {
-      this.siteForm.get('detailForm.photo')?.setValue(value);
+      (this.details.at(0) as FormGroup).get('photoD')?.setValue(value);
     });
+  }
+
+  createDetail() {
+    return this.fb.nonNullable.group({
+      nomD: [''],
+      photoD: [''],
+      dateDecouverte: [''],
+      possedeMusee: [false],
+      periodeHistorique: ['']
+    })
   }
   onSubmit() {
     this.siteService.addSite(this.siteForm.value).subscribe(
@@ -50,27 +56,38 @@ export class Add implements OnInit {
     )
   }
 
-  get detail() {
-    return this.siteForm.get('descriptionDetaillee') as FormGroup;
+  get details(): FormArray {
+    return this.siteForm.get('details') as FormArray;
   }
 
+  addDetail() {
+    this.details.push(this.createDetail());
+  }
+
+  removeDetail(i: number) {
+    this.details.removeAt(i);
+  }
   onResetForm() {
     this.siteForm.reset({
-      nom: [''],
-      localisation: [''],
-      gouvernorat: [''],
-      photo: [''],
-      prixEntree: [''],
-      horaires: [''],
-      descriptionCourte: [''],
+      nom: '',
+      localisation: '',
+      gouvernorat: '',
+      photo: '',
+      prixEntree: '',
+      horaires: '',
+      descriptionCourte: '',
+      latitude:'',
+      longitude:'',
       detailForm: {
-        nom: [''],
-        photo: [''],
-        dateDecouverte: [''],
-        possedeMusee: [''],
-        periodeHistorique: ['']
+        nomD: '',
+        photoD: '',
+        dateDecouverte: '',
+        possedeMusee: '',
+        periodeHistorique: ''
       }
-    })
+    });
+    this.details.clear();
+    this.addDetail();
   }
 
 

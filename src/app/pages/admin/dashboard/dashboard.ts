@@ -14,6 +14,7 @@ export class Dashboard implements OnInit {
   readonly authService: AuthService = inject(AuthService);
   readonly router: Router = inject(Router);
   sites: SiteArcheologique[] = [];
+  siteLikes:Record<string,number>={};
   readonly siteService: SiteService = inject(SiteService);
   ngOnInit(): void {
     this.siteService.getAllSite().subscribe(
