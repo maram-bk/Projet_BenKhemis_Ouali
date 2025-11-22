@@ -28,8 +28,5 @@ export class AuthService {
     localStorage.setItem("state", "disconnected");
     localStorage.removeItem("adminId");
   }
-  isLogged(): boolean {
-    return localStorage.getItem("state") === "connected";
-  }
 
 }

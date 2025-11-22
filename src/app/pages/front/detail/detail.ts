@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { SiteArcheologique } from '../../../models/site-archeologique';
-import { ActivatedRoute, Route, Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Route, Router} from '@angular/router';
 import { SiteService } from '../../../services/site-service';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
@@ -8,13 +8,11 @@ import { StarcommentPipe } from '../../../starcomment-pipe';
 
 @Component({
   selector: 'app-detail',
-  imports: [ReactiveFormsModule, DatePipe, StarcommentPipe, RouterLink],
+  imports: [ReactiveFormsModule, DatePipe, StarcommentPipe],
   templateUrl: './detail.html',
   styleUrl: './detail.css',
 })
 export class Detail implements OnInit {
-
-
   site!: SiteArcheologique;
   private readonly fb: FormBuilder = inject(FormBuilder);
   private readonly siteService: SiteService = inject(SiteService);
@@ -30,7 +28,9 @@ export class Detail implements OnInit {
     let [openStr, closeStr] = this.site.horaires.split('-').map(s => s.trim());
     let now = new Date();
     let today = new Date();
+    //extraire du opening time
     let [openHour, openMin] = openStr.replace('h', ':').split(':').map(Number);
+    //extraire du closing time
     let [closeHour, closeMin] = closeStr.replace('h', ':').split(':').map(Number);
     let openTime = new Date(today);
     openTime.setHours(openHour, openMin, 0, 0);
@@ -85,7 +85,7 @@ export class Detail implements OnInit {
     this.showComment = false;
 
   }
-  onBack() {
+  goBack() {
     this.router.navigate(['/front/list']);
   }
 

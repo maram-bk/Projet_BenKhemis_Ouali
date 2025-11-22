@@ -14,7 +14,7 @@ import { SiteCard } from "../site-card/site-card";
 })
 export class List implements OnInit {
   sites: SiteArcheologique[] = [];
-  filtered: SiteArcheologique[] = [];
+  filtered: SiteArcheologique[] = []; //bech taffichi the filtered list
   private readonly siteService: SiteService = inject(SiteService);
   private http: HttpClient = inject(HttpClient);
   searchName = "";
@@ -28,15 +28,15 @@ export class List implements OnInit {
   }
   onFilter() {
     this.filtered = this.sites.filter(site => {
-      let byName = this.searchName ? site.nom.toLowerCase().startsWith(this.searchName.toLowerCase()) : true;
-      let byPrix = this.maxPrix !== null && this.maxPrix !== undefined ? site.prixEntree <= this.maxPrix : true;
+      let byName = this.searchName ? site.nom.toLowerCase().startsWith(this.searchName.toLowerCase()) : true; //premiere lettre 
+      let byPrix = this.maxPrix !== null && this.maxPrix !== undefined ? site.prixEntree <= this.maxPrix : true; //prix max
       return byName && byPrix;
     })
   }
   onClearFilter() {
     this.searchName = '';
     this.maxPrix = null;
-    this.filtered = [...this.sites];
+    this.filtered = [...this.sites]; //copier tous les sites back
   }
 
 }
