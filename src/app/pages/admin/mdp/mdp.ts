@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Admin } from '../../../models/admin';
 
 @Component({
   selector: 'app-mdp',
@@ -20,7 +21,7 @@ private router:Router=inject(Router);
   ngOnInit(): void {
     this.passwordForm = this.fb.nonNullable.group({
       oldPassword: ['', Validators.required],
-      newPassword: ['', [Validators.required, Validators.minLength(6)]]
+      newPassword: ['', [Validators.required, Validators.maxLength(8)]]
     });
   }
 
@@ -32,18 +33,21 @@ private router:Router=inject(Router);
     return this.passwordForm.get('newPassword');
   }
 
+  public formatMdp(){
+    return this.newPassword?.errors?.['maxlength'] && this.newPassword?.dirty
+  }
+
   changePassword() {
-    if(this.passwordForm.invalid) return;
     let oldPwd = this.passwordForm.value.oldPassword;
     let newPwd = this.passwordForm.value.newPassword;
-    this.http.get<any>(`${this.API_URL}/${this.adminId}`).subscribe(admin => {
+    this.http.get<Admin>(`${this.API_URL}/${this.adminId}`).subscribe(admin => {
 
       if (admin.password !== oldPwd) {
         this.oldPasswordIncorrect = true;
         return;
       }
 
-      this.http.patch(`${this.API_URL}/${this.adminId}`, { password: newPwd })
+      this.http.patch<Admin>(`${this.API_URL}/${this.adminId}`, { password: newPwd })
         .subscribe(() => {
           alert("Mot de passe modifié avec succès !");
           this.passwordForm.reset();

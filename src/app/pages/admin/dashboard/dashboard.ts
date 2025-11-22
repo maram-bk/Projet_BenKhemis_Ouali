@@ -14,7 +14,6 @@ export class Dashboard implements OnInit {
   readonly authService: AuthService = inject(AuthService);
   readonly router: Router = inject(Router);
   sites: SiteArcheologique[] = [];
-  siteLikes:Record<string,number>={};
   readonly siteService: SiteService = inject(SiteService);
   ngOnInit(): void {
     this.siteService.getAllSite().subscribe(
@@ -24,6 +23,7 @@ export class Dashboard implements OnInit {
   deleteSite(id: string) {
     this.siteService.deleteSiteById(id).subscribe(
       data => {
+        confirm('Veuillez supprimer ce site?')
         this.sites = this.sites.filter(e => e.id != id)
       })
   }

@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { map, Observable, of } from 'rxjs';
-import { SiteArcheologique } from '../models/site-archeologique';
-
+import { Admin } from '../models/admin';
 
 const API_URL = "http://localhost:3000/admins";
 @Injectable({
@@ -10,9 +9,8 @@ const API_URL = "http://localhost:3000/admins";
 })
 export class AuthService {
   private http: HttpClient = inject(HttpClient);
-  private site: SiteArcheologique[] = [];
   logIn(username: string, pwd: string): Observable<boolean> {
-    return this.http.get<any[]>(API_URL).pipe(
+    return this.http.get<Admin[]>(API_URL).pipe(
       map(admin => {
         let connected = admin.find(a => a.username === username && a.password === pwd);
         if (connected) {

@@ -8,7 +8,11 @@
   </div>}
   <label>Nouveau mot de passe</label>
   <input type="password" formControlName="newPassword" class="form-control">
-  <button class="btn btn-primary mt-2" type="submit">Changer</button>
+  @if(formatMdp()){
+  <div class="alert alert-danger mt-2">
+    Le mot de passe dépasse 8 caractères.
+  </div>}
+  <button class="btn btn-primary mt-2" type="submit" [disabled]="passwordForm.invalid">Changer</button>
 </form>
 
 

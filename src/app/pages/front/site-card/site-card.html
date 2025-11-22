@@ -1,0 +1,18 @@
+<div class="card h-100">
+    <img [src]="site.photo" class="card-img-top" style="height:200px; object-fit:cover;">
+    <div class="card-body d-flex flex-column">
+        <h5 class="card-title">{{site.nom}}</h5>
+        <details class="heart">
+            <summary>
+                <i class="bi bi-heart"></i>
+                <i class="bi bi-heart-fill"></i>
+            </summary>
+        </details>
+        <p class="card-text">{{site.descriptionCourte}}</p>
+        <p class="mb-1"><strong>Gouvernorat: </strong>{{site.gouvernorat}}</p>
+        <p class="mb-2"><strong>Prix: </strong>{{site.prixEntree}} DT</p>
+        <div class="mt-auto">
+            <a [routerLink]="['/front/detail',site.id]" class="btn btn-primary w-100">Voir plus</a>
+        </div>
+    </div>
+</div>

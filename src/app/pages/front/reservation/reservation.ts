@@ -3,7 +3,7 @@ import { SiteArcheologique } from '../../../models/site-archeologique';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { SiteService } from '../../../services/site-service';
 import { HttpClient } from '@angular/common/http';
-import { RouterLink } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-reservation',
@@ -13,11 +13,11 @@ import { RouterLink } from "@angular/router";
 })
 export class Reservation {
   sites: SiteArcheologique[] = [];
-  success = false;
   private readonly fb: FormBuilder = inject(FormBuilder);
   reserveForm!: FormGroup;
   private readonly siteService: SiteService = inject(SiteService);
   private readonly http:HttpClient=inject (HttpClient);
+  private router:Router=inject(Router);
   ngOnInit() {
     this.reserveForm = this.fb.nonNullable.group({
       nom: [''],
@@ -35,8 +35,9 @@ export class Reservation {
   onSubmit() {
     console.log('Réservation envoyée :', this.reserveForm.value);
     this.http.post('http://localhost:3000/reservations', this.reserveForm.value).subscribe(() => {
-      this.success = true;
+      alert('Réservation Faite !');
       this.onResetForm();
+      this.router.navigate(['/front/list']);
     });
 
   }

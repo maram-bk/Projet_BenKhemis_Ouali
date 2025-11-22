@@ -18,14 +18,7 @@
           "periodeHistorique": "Époque romaine (IIIe siècle)"
         }
       ],
-      "comments": [
-        {
-          "nom": "Ahmed Ben Ali",
-          "message": "Magnifique site, très bien conservé et impressionnant à visiter.",
-          "note": 5,
-          "date": "2025-08-12"
-        }
-      ],
+      "comments": [],
       "latitude": 35.3,
       "longitude": 10.7167
     },
@@ -83,12 +76,6 @@
         }
       ],
       "comments": [
-        {
-          "nom": "Amira Haddad",
-          "message": "Superbe mélange entre histoire punique et romaine. Le musée est très bien fait.",
-          "note": 5,
-          "date": "2025-02-21"
-        },
         {
           "nom": "Youssef Marzouki",
           "message": "Les thermes d’Antonin sont impressionnants, mais la signalisation pourrait être améliorée.",
@@ -284,7 +271,7 @@
   "admins": [
     {
       "id": "1",
-      "username": "admin",
+      "username": "admin_maram",
       "password": "maram123",
       "email": "benkhemsimaram150@gmail.com",
       "nom": "Ben Khemis",
@@ -292,7 +279,7 @@
     },
     {
       "id": "2",
-      "username": "admin",
+      "username": "admin_lina",
       "password": "lina123",
       "email": "linawali50@gmail.com",
       "nom": "Ouali",
@@ -308,6 +295,15 @@
       "site": "Carthage",
       "date": "2025-11-28",
       "personnes": 9
+    },
+    {
+      "id": "5ec1",
+      "nom": "eya",
+      "email": "eya@gmail.com",
+      "tel": "4115121",
+      "site": "",
+      "date": "2025-11-14",
+      "personnes": 1
     }
   ]
 }

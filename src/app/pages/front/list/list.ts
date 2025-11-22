@@ -4,10 +4,11 @@ import { SiteService } from '../../../services/site-service';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from "@angular/router";
 import { HttpClient } from '@angular/common/http';
+import { SiteCard } from "../site-card/site-card";
 
 @Component({
   selector: 'app-list',
-  imports: [FormsModule, RouterLink],
+  imports: [FormsModule, SiteCard],
   templateUrl: './list.html',
   styleUrl: './list.css',
 })

@@ -94,7 +94,6 @@ export class Detail implements OnInit {
   }
   editingIndex = 0;
   onEditComment(index: number) {
-    // exemple : ouvrir le formulaire pour éditer le commentaire
     const comment = this.site.comments![index];
     this.commentForm.patchValue({
       nom: comment.nom,
@@ -108,6 +107,11 @@ export class Detail implements OnInit {
   onDeleteComment(index: number) {
     if (confirm("Voulez-vous vraiment supprimer ce commentaire ?")) {
       this.site.comments!.splice(index, 1);
+      this.siteService.updateSiteById(this.site.id, this.site).subscribe(()=>{
+        alert("commentaire supprimé !");
+      }
+
+      )
     }
   }
 

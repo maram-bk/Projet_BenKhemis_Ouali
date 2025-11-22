@@ -11,6 +11,7 @@ import { Mdp } from './pages/admin/mdp/mdp';
 import { Reservation } from './pages/front/reservation/reservation';
 import { Compte } from './pages/admin/compte/compte';
 import { Error } from './pages/error/error';
+import { AdminReservation } from './pages/admin/admin-reservation/admin-reservation';
 
 export const routes: Routes = [
     //front
@@ -26,6 +27,7 @@ export const routes: Routes = [
         children: [
             { path: 'login', component: Login },
             {path: 'dashboard', component: Dashboard, canActivate:[authGuard]},
+            {path:'reservations',component:AdminReservation,canActivate:[authGuard]},
             { path: 'mdp', component: Mdp,canActivate:[authGuard] },
             { path: 'add', component: Add,canActivate:[authGuard] },
             { path: 'edit/:id', component: Edit,canActivate:[authGuard] },

@@ -8,70 +8,108 @@
       <label>Nom</label>
       <input class="form-control" formControlName="nom" name="nom">
     </div>
+    @if (getNom?.errors?.['required'] && getNom?.touched){
+    <div class="alert alert-danger">Veuillez saisir un nom.</div>
+    }
     <div class="mb-2">
       <label>Localisation</label>
       <input class="form-control" formControlName="localisation" name="localisation">
     </div>
+    @if (getLocalisation?.errors?.['required'] && getLocalisation?.touched){
+    <div class="alert alert-danger">Veuillez saisir une localisation.</div>
+    }
     <div class="mb-2">
       <label>Gouvernorat</label>
       <input class="form-control" formControlName="gouvernorat" name="gouvernorat">
     </div>
+    @if (getGouvernorat?.errors?.['required'] && getGouvernorat?.touched){
+    <div class="alert alert-danger">Veuillez saisir un gouvernorat.</div>
+    }
     <div class="mb-2">
       <label>Photo</label>
-      <input class="form-control" type="url" formControlName="photo" name="photo">
+      <input class="form-control" type="text" formControlName="photo" name="photo">
     </div>
+    @if (getPhoto?.errors?.['required'] && getPhoto?.touched){
+    <div class="alert alert-danger">Veuillez saisir une photo.</div>
+    }
+    @if (formatPhoto()){
+    <div class="alert alert-warning">Format Photo incorrect.</div>
+    }
     <div class="mb-2">
       <label>Prix entrée</label>
       <input type="number" class="form-control" formControlName="prixEntree" name="prixEntree">
     </div>
+    @if (getPrixEntree?.errors?.['required'] && getPrixEntree?.touched){
+    <div class="alert alert-danger">Veuillez saisir un prix d'entrée.</div>
+    }
+    @if(minPrix()){
+    <div class="alert alert-warning">Doit être supérieur à 0.1.</div>
+    }
     <div class="mb-2">
       <label>Horaires</label>
       <input class="form-control" formControlName="horaires" name="horaires">
     </div>
+    @if (getHoraires?.errors?.['required'] && getHoraires?.touched){
+    <div class="alert alert-danger">Veuillez saisir les horaires.</div>
+    }
+    @if(formatHoraires()){
+    <div class="alert alert-warning">Format Horaires incorrect.</div>
+    }
     <div class="mb-2">
       <label>Déscription Courte</label>
       <input class="form-control" formControlName="descriptionCourte" name="descriptionCourte">
     </div>
+    @if (getDescCourte?.errors?.['required'] && getDescCourte?.touched){
+    <div class="alert alert-danger">Veuillez saisir une description courte.</div>
+    }
     <div class="mb-2">
       <label>Latitude</label>
       <input type="number" class="form-control" formControlName="latitude" name="latitude">
     </div>
+    @if (getLatitude?.errors?.['required'] && getLatitude?.touched){
+    <div class="alert alert-danger">Veuillez saisir une latitude.</div>
+    }
     <div class="mb-2">
       <label>Longitude</label>
       <input type="number" class="form-control" formControlName="longitude" name="longitude">
     </div>
+    @if (getLongitude?.errors?.['required'] && getLongitude?.touched){
+    <div class="alert alert-danger">Veuillez saisir une longitude.</div>
+    }
     <div class="mb-2">
-      <fieldset formArrayName="details">
-        <strong>Déscription Détaillée</strong>
-        @for (detail of details.controls; track $index;let i = $index) {
-        <div class="border p-3 mb-3 rounded" [formGroupName]="i">
-          <div class="col-md-4">
-            <label>Nom</label>
-            <input class="form-control" formControlName="nomD">
+      <div class="details-wrapper">
+        <fieldset formArrayName="details">
+          <strong>Déscription Détaillée</strong>
+          @for (detail of details.controls; track $index;let i = $index) {
+          <div class="border p-3 mb-3 rounded" [formGroupName]="i">
+            <div class="col-md-4">
+              <label>Nom</label>
+              <input class="form-control" formControlName="nomD">
+            </div>
+            <div class="col-md-4">
+              <label>Photo</label>
+              <input type="text" class="form-control" formControlName="photoD">
+            </div>
+            <div class="col-md-4">
+              <label>Date découverte</label>
+              <input type="date" class="form-control" formControlName="dateDecouverte">
+            </div>
+            <div class="col-md-6">
+              <label>Période historique</label>
+              <input class="form-control" formControlName="periodeHistorique">
+            </div>
+            <div class="col-md-2 d-flex align-items-center">
+              <input type="checkbox" class="form-check-input me-2" formControlName="possedeMusee">Posse de Musée
+            </div>
+            <button type="button" class="btn btn-danger btn-sm mt-2" (click)="removeDetail(i)">Supprimer</button>
           </div>
-          <div class="col-md-4">
-            <label>Photo</label>
-            <input type="url" class="form-control" formControlName="photoD">
-          </div>
-          <div class="col-md-4">
-            <label>Date découverte</label>
-            <input type="date" class="form-control" formControlName="dateDecouverte">
-          </div>
-          <div class="col-md-6">
-            <label>Période historique</label>
-            <input class="form-control" formControlName="periodeHistorique">
-          </div>
-          <div class="col-md-2 d-flex align-items-center">
-            <input type="checkbox" class="form-check-input me-2" formControlName="possedeMusee">Posse de Musée
-          </div>
-          <button type="button" class="btn btn-danger btn-sm mt-2" (click)="removeDetail(i)">Supprimer</button>
-        </div>
-        }
-        <button type="button" class="btn btn-secondary btn-sm" (click)="addDetail()">+ Ajouter détail</button>
-      </fieldset>
+          }
+          <button type="button" class="btn btn-secondary btn-sm" (click)="addDetail()">+ Ajouter détail</button>
+        </fieldset>
+      </div>
     </div>
     <div class="d-flex gap-2">
-      <button class="btn btn-success">Enregistrer</button>
+      <button class="btn btn-success" [disabled]="siteForm.invalid">Enregistrer</button>
       <button type="button" class="btn btn-secondary" (click)="onResetForm()">Annuler</button>
     </div>
   </form>

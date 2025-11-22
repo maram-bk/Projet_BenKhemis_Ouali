@@ -1,0 +1,29 @@
+.heart summary {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  position: relative;
+}
+
+.heart i {
+  top: 0;
+  left: 0;
+  font-size: 15px;
+  color: rgb(246, 120, 120);
+  transition: opacity 0.2s;
+}
+
+.heart .bi-heart-fill {
+  opacity: 0;
+}
+
+.heart[open] .bi-heart {
+  opacity: 0;
+}
+.heart[open] .bi-heart-fill {
+  opacity: 1;
+}
+
+
+

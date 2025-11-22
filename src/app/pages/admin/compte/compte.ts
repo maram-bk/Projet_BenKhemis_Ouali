@@ -23,7 +23,7 @@ export class Compte {
     });
   }
 
-  onBack() {
+  goBack() {
     this.router.navigate(['/admin/dashboard']);
   }
 }
