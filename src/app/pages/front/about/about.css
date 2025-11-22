@@ -31,3 +31,16 @@
   border-radius: 4px;
   text-align: center;
 }
+.about-section h1, 
+.about-section h2 {
+  font-weight: 700;
+}
+
+.about-section p {
+  font-size: 16px;
+  color: #444;
+}
+
+.about-section img {
+  border-radius: 10px;
+}
