@@ -6,6 +6,6 @@ export interface Reservation {
     email: string;
     tel: string;
     site: SiteArcheologique;
-    date: string;
+    date: Date;
     personnes: number;
 }

@@ -5,10 +5,17 @@
     </div>
     <div class="col-md-6">
         <h2>{{site.nom}}</h2>
+        <p>
+            <strong>Site protégé : </strong>
+            <span [class.text-success]="site.siteProtege" [class.text-danger]="!site.siteProtege">
+                {{site.siteProtege ? 'Oui' : 'Non'}}
+            </span>
+        </p>
+        <p><small>Date d'ajout : {{site.dateAjout | date : 'dd-MM-yyyy'}}</small></p>
+
         <p><strong>Localisation: </strong>{{site.localisation}} ({{site.gouvernorat}})</p>
         <div class="hours-box"></div>
         <span class="label">Heures: {{site.horaires}}</span>
-        <!-- fonctionalité  -->
         <span [class.open]="isOpen" [class.closed]="!isOpen">
             {{isOpen ? 'Ouvert' : 'Fermé'}}
         </span>
@@ -22,11 +29,13 @@
             - {{d.periodeHistorique}}
             - découvert le {{d.dateDecouverte}}
         </p>
-        <!-- class binding -->
-        <p [class]="{
-                    'text-success' : d.possedeMusee,
-                    'text-danger' : !d.possedeMusee
-                }">Musée sur place : {{d.possedeMusee ? 'Oui' : 'Non'}}</p>
+        <p>
+            <strong>Musée sur place : </strong>
+            <span [class]="{
+                'text-success' : d.possedeMusee,
+                'text-danger' : !d.possedeMusee
+            }"> {{ d.possedeMusee ? 'Oui' : 'Non' }}</span>
+        </p>
         }
         }
     </div>
@@ -36,9 +45,7 @@
 @if (site.comments?.length) {
 @for (c of site.comments; track $index) {
 <div class="mb-3">
-    <!-- pipe date -->
-    <strong>{{c.nom}}</strong> - <small>{{c.date | date : 'dd-MM-yyyy'}}</small> 
-    <!-- pipe personalisé -->
+    <strong>{{c.nom}}</strong> - <small>{{c.date | date : 'dd-MM-yyyy'}}</small>
     <div>Note: {{c.note | starcomment}}</div>
     <p>{{c.message}}</p>
 </div>
@@ -58,7 +65,6 @@
 }
 
 <br>
-<!-- fonctionalité -->
 <button class="btn btn-primary" (click)="onShowComments()">Ajouter un commentaire</button>
 @if (showComment) {
 <div class="card p-3 mt-3">

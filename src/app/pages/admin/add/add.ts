@@ -23,10 +23,12 @@ export class Add implements OnInit {
       gouvernorat: ['', [Validators.required]],
       photo: ['', [Validators.required, Validators.pattern('^.+\\.(jpg|jpeg|png|webp)$')]],
       prixEntree: ['', [Validators.required, Validators.min(0.1)]],
-      horaires: ['8h00 - 17h00', [Validators.required,Validators.pattern('^([0-9]{1,2})h([0-5][0-9])\\s-\\s([0-9]{1,2})h([0-5][0-9])$')]],
+      horaires: ['8h00 - 17h00', [Validators.required, Validators.pattern('^([0-9]{1,2})h([0-5][0-9])\\s-\\s([0-9]{1,2})h([0-5][0-9])$')]],
       descriptionCourte: ['', [Validators.required]],
       latitude: ['', [Validators.required]],
       longitude: ['', [Validators.required]],
+      siteProtege: [false],
+      dateAjout: [new Date()],
       details: this.fb.array([])
     });
     this.addDetail();
@@ -68,10 +70,10 @@ export class Add implements OnInit {
     return this.getPhoto?.errors?.['pattern'] && this.getPhoto?.dirty;
   }
 
-  public formatHoraires(){
+  public formatHoraires() {
     return this.getHoraires?.errors?.['pattern'] && this.getHoraires?.dirty;
   }
-  public minPrix(){
+  public minPrix() {
     return this.getPrixEntree?.errors?.['min'] && this.getPrixEntree?.dirty;
   }
 
@@ -116,6 +118,8 @@ export class Add implements OnInit {
       descriptionCourte: '',
       latitude: '',
       longitude: '',
+      siteProtege: false,
+      dateAjout: '',
       detailForm: {
         nomD: '',
         photoD: '',

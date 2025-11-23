@@ -20,7 +20,9 @@
       ],
       "comments": [],
       "latitude": 35.3,
-      "longitude": 10.7167
+      "longitude": 10.7167,
+      "siteProtege": true,
+      "dateAjout": "2024-01-01"
     },
     {
       "id": "site-dougga",
@@ -55,7 +57,9 @@
         }
       ],
       "latitude": 36.42,
-      "longitude": 9.22
+      "longitude": 9.22,
+      "siteProtege": true,
+      "dateAjout": "2024-03-12"
     },
     {
       "id": "site-carthage",
@@ -90,7 +94,9 @@
         }
       ],
       "latitude": 36.8529,
-      "longitude": 10.3239
+      "longitude": 10.3239,
+      "siteProtege": true,
+      "dateAjout": "2023-12-01"
     },
     {
       "id": "site-bullaregia",
@@ -125,7 +131,9 @@
         }
       ],
       "latitude": 36.5,
-      "longitude": 8.7833
+      "longitude": 8.7833,
+      "siteProtege": false,
+      "dateAjout": "2024-04-20"
     },
     {
       "id": "site-sbeitla",
@@ -160,7 +168,9 @@
         }
       ],
       "latitude": 35.2333,
-      "longitude": 9.1167
+      "longitude": 9.1167,
+      "siteProtege": true,
+      "dateAjout": "2023-11-10"
     },
     {
       "id": "site-oudna",
@@ -195,7 +205,9 @@
         }
       ],
       "latitude": 36.6947,
-      "longitude": 10.2333
+      "longitude": 10.2333,
+      "siteProtege": false,
+      "dateAjout": "2024-05-01"
     },
     {
       "id": "site-haidra",
@@ -230,7 +242,9 @@
         }
       ],
       "latitude": 34.9667,
-      "longitude": 8.8833
+      "longitude": 8.8833,
+      "siteProtege": false,
+      "dateAjout": "2024-06-10"
     },
     {
       "id": "site-thuburbo",
@@ -265,7 +279,9 @@
         }
       ],
       "latitude": 36.367,
-      "longitude": 10.05
+      "longitude": 10.05,
+      "siteProtege": true,
+      "dateAjout": "2023-10-05"
     }
   ],
   "admins": [

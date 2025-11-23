@@ -3,5 +3,4 @@ export interface Commentaire {
     message: string,
     note: number;
     date: string;
-
 }

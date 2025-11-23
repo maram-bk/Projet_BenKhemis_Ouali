@@ -2,10 +2,11 @@ import { Component, inject, OnInit } from '@angular/core';
 import { Reservation } from '../../../models/reservation';
 import { ReservationService } from '../../../services/reservation-service';
 import { Router } from '@angular/router';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-admin-reservation',
-  imports: [],
+  imports: [DatePipe],
   templateUrl: './admin-reservation.html',
   styleUrl: './admin-reservation.css',
 })

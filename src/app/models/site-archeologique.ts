@@ -12,9 +12,9 @@ export interface SiteArcheologique {
     descriptionDetaillee?: SiteDetail[];
     horaires: string;
     comments?: Commentaire[];
-
     //
-    latitude:number;
-    longitude:number;
-
+    latitude: number;
+    longitude: number;
+    siteProtege: boolean;
+    dateAjout: Date;
 }

@@ -37,32 +37,35 @@ export class Edit implements OnInit {
       prixEntree: [this.site.prixEntree],
       descriptionCourte: [this.site.descriptionCourte],
       horaires: [this.site.horaires],
+      latitude: [this.site.latitude],
+      longitude: [this.site.longitude],
+      siteProtege: [this.site.siteProtege],
+      dateAjout: [this.site.dateAjout],
       descriptionDetaillee: this.fb.array(
-
-      this.site.descriptionDetaillee?.map(d => this.fb.group({
-        nom: [d.nom],
-        photo: [d.photo],
-        dateDecouverte: [d.dateDecouverte],
-        possedeMusee: [d.possedeMusee],
-        periodeHistorique: [d.periodeHistorique]
-      })) || []
-    ),
-    comments: this.fb.array(
-      this.site.comments?.map(c => this.fb.group({
-        nom: [c.nom],
-        message: [c.message],
-        note: [c.note],
-        date: [c.date]
-      })) || []
-    )
+        this.site.descriptionDetaillee?.map(d => this.fb.group({
+          nom: [d.nom],
+          photo: [d.photo],
+          dateDecouverte: [d.dateDecouverte],
+          possedeMusee: [d.possedeMusee],
+          periodeHistorique: [d.periodeHistorique]
+        })) || []
+      ),
+      comments: this.fb.array(
+        this.site.comments?.map(c => this.fb.group({
+          nom: [c.nom],
+          message: [c.message],
+          note: [c.note],
+          date: [c.date]
+        })) || []
+      )
     });
   }
   get comments() {
-  return this.editForm.get('comments') as FormArray;
-}
+    return this.editForm.get('comments') as FormArray;
+  }
   removeComment(index: number) {
-  this.comments.removeAt(index);
-}
+    this.comments.removeAt(index);
+  }
   get descriptionDetaillee() {
     return this.editForm.get('descriptionDetaillee') as FormArray;
   }
@@ -78,9 +81,9 @@ export class Edit implements OnInit {
   }
 
 
-removeDetail(index: number) {
-  this.descriptionDetaillee.removeAt(index);
-}
+  removeDetail(index: number) {
+    this.descriptionDetaillee.removeAt(index);
+  }
   onSubmit() {
     if (this.editForm.valid) {
       let updatedSite: SiteArcheologique = {
