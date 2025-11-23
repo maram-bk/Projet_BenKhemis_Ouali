@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { SiteArcheologique } from '../../../models/site-archeologique';
-import { ActivatedRoute, Route, Router} from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { SiteService } from '../../../services/site-service';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
@@ -23,6 +23,8 @@ export class Detail implements OnInit {
   openAt: string = '';
   closeAt: string = '';
   showComment: boolean = false;
+  editingIndex = -1;
+
   checkOpenStatus() {
     if (!this.site || !this.site.horaires) return;
     let [openStr, closeStr] = this.site.horaires.split('-').map(s => s.trim());
@@ -46,7 +48,7 @@ export class Detail implements OnInit {
       message: [''],
       note: [0]
     });
-    this.route.params.subscribe(params => {
+    this.route.params.subscribe(params => {   //récupérer dynamiquement l'id passé dans l'URL
       const id = params['id'];
       if (id) {
         this.siteService.getSiteById(id).subscribe(s => {
@@ -92,7 +94,7 @@ export class Detail implements OnInit {
   onShowComments() {
     this.showComment = !this.showComment;
   }
-  editingIndex = 0;
+
   onEditComment(index: number) {
     const comment = this.site.comments![index];
     this.commentForm.patchValue({
@@ -107,7 +109,7 @@ export class Detail implements OnInit {
   onDeleteComment(index: number) {
     if (confirm("Voulez-vous vraiment supprimer ce commentaire ?")) {
       this.site.comments!.splice(index, 1);
-      this.siteService.updateSiteById(this.site.id, this.site).subscribe(()=>{
+      this.siteService.updateSiteById(this.site.id, this.site).subscribe(() => {
         alert("commentaire supprimé !");
       }
 

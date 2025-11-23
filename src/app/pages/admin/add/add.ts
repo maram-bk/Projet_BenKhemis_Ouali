@@ -22,13 +22,13 @@ export class Add implements OnInit {
       localisation: ['', [Validators.required]],
       gouvernorat: ['', [Validators.required]],
       photo: ['', [Validators.required, Validators.pattern('^.+\\.(jpg|jpeg|png|webp)$')]],
-      prixEntree: ['', [Validators.required, Validators.min(0.1)]],
+      prixEntree: [0, [Validators.required, Validators.min(0.1)]],
       horaires: ['8h00 - 17h00', [Validators.required, Validators.pattern('^([0-9]{1,2})h([0-5][0-9])\\s-\\s([0-9]{1,2})h([0-5][0-9])$')]],
       descriptionCourte: ['', [Validators.required]],
-      latitude: ['', [Validators.required]],
-      longitude: ['', [Validators.required]],
-      siteProtege: [false],
-      dateAjout: [new Date()],
+      latitude: [0, [Validators.required]],
+      longitude: [0, [Validators.required]],
+      siteProtege: [false, [Validators.required]],
+      dateAjout: [new Date(), [Validators.required]],
       details: this.fb.array([])
     });
     this.addDetail();

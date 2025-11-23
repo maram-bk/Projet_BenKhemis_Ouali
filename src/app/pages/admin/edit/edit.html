@@ -1,58 +1,82 @@
 <div class="container mt-4">
   <h2 class="mb-4">Modifier le site</h2>
-
   <form [formGroup]="editForm" (submit)="onSubmit()">
-
     <div class="mb-3">
       <label class="form-label">Nom</label>
       <input type="text" class="form-control" formControlName="nom">
     </div>
-
+    @if (getNom?.errors?.['required'] && getNom?.touched){
+    <div class="alert alert-danger">Veuillez saisir un nom.</div>
+    }
     <div class="mb-3">
       <label class="form-label">Localisation</label>
       <input type="text" class="form-control" formControlName="localisation">
     </div>
-
+    @if (getLocalisation?.errors?.['required'] && getLocalisation?.touched){
+    <div class="alert alert-danger">Veuillez saisir une localisation.</div>
+    }
     <div class="mb-3">
       <label class="form-label">Gouvernorat</label>
       <input type="text" class="form-control" formControlName="gouvernorat">
     </div>
-
+    @if (getGouvernorat?.errors?.['required'] && getGouvernorat?.touched){
+    <div class="alert alert-danger">Veuillez saisir un gouvernorat.</div>
+    }
     <div class="mb-3">
       <label class="form-label">Photo</label>
       <input type="text" class="form-control" formControlName="photo">
     </div>
-
+    @if (getPhoto?.errors?.['required'] && getPhoto?.touched){
+    <div class="alert alert-danger">Veuillez saisir une photo.</div>
+    }
+    @if (formatPhoto()){
+    <div class="alert alert-warning">Format Photo incorrect.</div>
+    }
     <div class="mb-3">
       <label class="form-label">Prix d'entrée</label>
       <input type="number" class="form-control" formControlName="prixEntree">
     </div>
-
-    <div class="mb-3">
-      <label class="form-label">Description Courte</label>
-      <textarea class="form-control" rows="2" formControlName="descriptionCourte"></textarea>
-    </div>
-
+    @if (getPrixEntree?.errors?.['required'] && getPrixEntree?.touched){
+    <div class="alert alert-danger">Veuillez saisir un prix d'entrée.</div>
+    }
+    @if(minPrix()){
+    <div class="alert alert-warning">Doit être supérieur à 0.1.</div>
+    }
     <div class="mb-3">
       <label class="form-label">Horaires</label>
       <input type="text" class="form-control" formControlName="horaires">
     </div>
-
-    <div class="mb-2">
+    @if (getHoraires?.errors?.['required'] && getHoraires?.touched){
+    <div class="alert alert-danger">Veuillez saisir les horaires.</div>
+    }
+    @if(formatHoraires()){
+    <div class="alert alert-warning">Format Horaires incorrect.</div>
+    }
+    <div class="mb-3">
+      <label class="form-label">Description Courte</label>
+      <textarea class="form-control" rows="2" formControlName="descriptionCourte"></textarea>
+    </div>
+    @if (getDescCourte?.errors?.['required'] && getDescCourte?.touched){
+    <div class="alert alert-danger">Veuillez saisir une description courte.</div>
+    }
+    <div class="mb-3">
       <label>Latitude</label>
       <input type="number" class="form-control" formControlName="latitude" name="latitude">
     </div>
-    
-    <div class="mb-2">
+    @if (getLatitude?.errors?.['required'] && getLatitude?.touched){
+    <div class="alert alert-danger">Veuillez saisir une latitude.</div>
+    }
+    <div class="mb-3">
       <label>Longitude</label>
       <input type="number" class="form-control" formControlName="longitude" name="longitude">
     </div>
-
+    @if (getLongitude?.errors?.['required'] && getLongitude?.touched){
+    <div class="alert alert-danger">Veuillez saisir une longitude.</div>
+    }
     <div class="mb-2">
       <label>Site protégé</label>
       <input type="checkbox" class="form-check-input ms-2" formControlName="siteProtege">
     </div>
-
     <div class="mb-2">
       <label>Date d’ajout</label>
       <input type="date" class="form-control" formControlName="dateAjout">
@@ -98,7 +122,7 @@
       </div>
       }
     </div>
-    <button class="btn btn-primary mt-3" type="submit">Enregistrer</button>
+    <button class="btn btn-primary mt-3" type="submit" [disabled]="editForm.invalid">Enregistrer</button>
     <button type="button" routerLink="/admin/dashboard" class="btn btn-secondary mt-3 ms-2">Annuler</button>
   </form>
 </div>
